@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plusra — 迷わず使えて、ちゃんと売上に変わる。</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --accent:       #1961D5;
+  --accent2:      #56B8E8;
+  --accent-soft:  #EFF6FF;
+  --accent-soft2: #DBEAFE;
+  --accent-line:  #8DB8FF;
+  --grad:         linear-gradient(135deg, #1961D5 0%, #56B8E8 100%);
+  --grad-deep:    linear-gradient(160deg, #0E3A9A 0%, #1961D5 60%, #3E86E0 100%);
+  --wash-top:     linear-gradient(180deg, #FFFFFF 0%, #EEF4FF 100%);
+  --wash-blue:    linear-gradient(180deg, #EEF4FF 0%, #DCE9FE 100%);
+  --card:         #FFFFFF;
+  --card2:        #F8FAFC;
+  --panel2:       #F1F5F9;
+  --line:         #E2E8F0;
+  --line2:        #CBD5E1;
+  --ink:          #0F172A;
+  --ink2:         #334155;
+  --ink3:         #64748B;
+  --ink4:         #94A3B8;
+  --sans:         'Noto Sans JP', system-ui, -apple-system, sans-serif;
+  --mono:         ui-monospace, 'SF Mono', Menlo, monospace;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--sans); background: var(--card); color: var(--ink); }
+
+/* ── Placeholder ── */
+.ph {
+  background: repeating-linear-gradient(135deg, #EFF3F8 0 10px, #F8FAFC 10px 20px);
+  border: 1px dashed var(--line2);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.ph span {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--ink3);
+  letter-spacing: 0.3px;
+  padding: 4px 9px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--card);
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 52px;
+  padding: 0 30px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.2px;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+.btn-hero-solid {
+  background: #fff;
+  color: var(--accent);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.28);
+}
+.btn-hero-outline {
+  background: transparent;
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,0.4);
+  font-size: 15px;
+  font-weight: 600;
+  height: 52px;
+}
+.btn-solid {
+  background: var(--grad);
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(25,97,213,0.28);
+  height: 48px;
+  font-size: 15px;
+}
+.btn-full { width: 100%; }
+.btn:hover { opacity: 0.9; }
+
+/* ── Nav CTA ── */
+.nav-cta {
+  height: 38px;
+  padding: 0 18px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 13px;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+
+/* ── Pills ── */
+.pill-accent {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border: 1px solid var(--accent-line);
+}
+
+/* ── Avatar ── */
+.avatar {
+  border-radius: 50%;
+  background: var(--panel2);
+  border: 1px solid var(--line);
+  flex-shrink: 0;
+}
+
+/* ── Card ── */
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  box-shadow: 0 1px 2px rgba(15,23,42,0.04);
+}
+
+/* ── Section ── */
+.sec { padding: 76px 80px; }
+.sec-inner { max-width: 1000px; margin: 0 auto; }
+.sec-head { text-align: center; margin-bottom: 40px; }
+.sec-head h2 {
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 1.3;
+  letter-spacing: -0.6px;
+  color: var(--ink);
+}
+
+/* ── FAQ ── */
+.faq-item {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--card);
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(15,23,42,0.04);
+}
+.faq-item + .faq-item { margin-top: 12px; }
+.faq-item.is-open { border-color: var(--accent-line); background: var(--accent-soft); }
+.faq-q {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 22px;
+  cursor: pointer;
+  user-select: none;
+}
+.faq-q-text { font-weight: 600; font-size: 15px; color: var(--ink); }
+.faq-toggle { font-family: var(--mono); font-size: 18px; color: var(--accent); flex-shrink: 0; margin-left: 16px; }
+.faq-a { display: none; padding: 0 22px 20px; font-size: 14px; color: var(--ink2); line-height: 1.85; }
+.faq-item.is-open .faq-a { display: block; }
+
+/* ── Comparison table ── */
+.cmp-grid { display: grid; grid-template-columns: 1.5fr 1.1fr 1fr 1fr; align-items: center; }
+.cmp-label {
+  padding: 14px 8px 14px 2px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+}
+.cmp-plusra {
+  padding: 14px 6px;
+  background: var(--accent-soft);
+  border-left: 1px solid var(--accent-line);
+  border-right: 1px solid var(--accent-line);
+  border-bottom: 1px solid var(--accent-soft2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  text-align: center;
+}
+.cmp-other {
+  padding: 14px 6px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  text-align: center;
+}
+</style>
+</head>
+<body>
+
+<!-- ══ BLOCK 1: FV（ダークブルー背景 + PCモック） ══ -->
+<div style="position: relative; min-height: 720px; display: flex; flex-direction: column; overflow: hidden; background: radial-gradient(80% 95% at 4% -8%, #2E6FE6 0%, #1A4DC0 28%, #0E2E86 58%, #0A1E5C 100%);">
+
+  <!-- Sticky Nav (transparent, white text) -->
+  <nav style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; height: 66px; background: transparent;">
+    <div style="display: flex; align-items: center; gap: 9px;">
+      <div style="width: 26px; height: 26px; border-radius: 8px; background: var(--grad);"></div>
+      <span style="font-weight: 800; font-size: 18px; color: #fff; letter-spacing: -0.4px;">Plusra</span>
+    </div>
+    <div style="display: flex; gap: 28px;">
+      <a href="#features" style="font-size: 14px; font-weight: 500; color: #fff; text-decoration: none;">機能</a>
+      <a href="#compare" style="font-size: 14px; font-weight: 500; color: #fff; text-decoration: none;">比較</a>
+      <a href="#pricing" style="font-size: 14px; font-weight: 500; color: #fff; text-decoration: none;">料金</a>
+      <a href="#faq" style="font-size: 14px; font-weight: 500; color: #fff; text-decoration: none;">FAQ</a>
+    </div>
+    <a href="#" class="nav-cta">無料で始める</a>
+  </nav>
+
+  <!-- Hero content -->
+  <div style="flex: 1; display: flex; align-items: center; position: relative;">
+    <!-- Left: copy -->
+    <div style="position: relative; z-index: 2; max-width: 620px; padding: 40px 0 40px 80px; display: flex; flex-direction: column; align-items: flex-start;">
+      <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 12.5px; font-weight: 600; color: rgba(255,255,255,0.9); padding: 7px 14px; border-radius: 999px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); margin-bottom: 24px;">iSTEP / エルグラム / ManyChat からの乗り換え専用</span>
+      <h1 style="margin: 0; font-weight: 800; font-size: 50px; line-height: 1.2; letter-spacing: -1.4px; color: #fff;">迷わず使えて、<br>ちゃんと売上に変わる。</h1>
+      <p style="margin: 22px 0 0; font-size: 16px; color: rgba(255,255,255,0.82); line-height: 1.85; max-width: 440px;">毎月高い固定費を払っているのに、自動返信を「使いこなせていない」あなたへ。複雑な設定も、毎月の課金も、もういりません。</p>
+      <div style="display: flex; flex-direction: column; gap: 11px; margin: 26px 0 0;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="#7FC2FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5L5.5 11L12 3.5"/></svg>
+          <span style="font-size: 15px; color: rgba(255,255,255,0.92);">初期費用・月額ずっと ¥0</span>
+        </div>
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="#7FC2FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5L5.5 11L12 3.5"/></svg>
+          <span style="font-size: 15px; color: rgba(255,255,255,0.92);">Meta公式API利用で安心</span>
+        </div>
+      </div>
+      <div style="display: flex; gap: 14px; margin: 30px 0 14px; align-items: center; flex-wrap: wrap;">
+        <a href="#" class="btn btn-hero-solid">無料で始める →</a>
+        <a href="#features" class="btn btn-hero-outline">機能を見る</a>
+      </div>
+      <span style="font-size: 12px; color: rgba(255,255,255,0.6);">登録は1分・クレジットカード不要</span>
+    </div>
+
+    <!-- Right: PC mock (absolutely positioned) -->
+    <div style="position: absolute; right: -70px; top: 50%; transform: translateY(-50%); width: 760px; z-index: 1;">
+      <div style="border-radius: 18px 0 0 18px; overflow: hidden; background: #fff; box-shadow: 0 50px 110px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.5);">
+        <!-- Browser chrome -->
+        <div style="height: 42px; display: flex; align-items: center; gap: 14px; padding: 0 18px; background: #F1F5F9; border-bottom: 1px solid var(--line);">
+          <div style="display: flex; gap: 7px;">
+            <div style="width: 11px; height: 11px; border-radius: 50%; background: var(--line);"></div>
+            <div style="width: 11px; height: 11px; border-radius: 50%; background: var(--line);"></div>
+            <div style="width: 11px; height: 11px; border-radius: 50%; background: var(--line);"></div>
+          </div>
+          <span style="font-family: var(--mono); font-size: 11.5px; color: var(--ink3);">Plusra — キャンバス編集画面</span>
+        </div>
+        <!-- Content area -->
+        <div style="position: relative; height: 460px; background: repeating-linear-gradient(135deg, #EFF3F8 0 12px, #F8FAFC 12px 24px); display: flex; align-items: center; justify-content: center;">
+          <div style="width: 88px; height: 88px; border-radius: 50%; background: var(--grad); display: flex; align-items: center; justify-content: center; box-shadow: 0 16px 40px rgba(25,97,213,0.45);">
+            <div style="width: 0; height: 0; border-style: solid; border-width: 15px 0 15px 24px; border-color: transparent transparent transparent #fff; margin-left: 5px;"></div>
+          </div>
+          <span style="position: absolute; bottom: 18px; font-family: var(--mono); font-size: 12px; color: var(--ink3); padding: 5px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--card);">サービス画面（動画）</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ BLOCK 2: 問題提起 ══ -->
+<section class="sec" style="background: var(--card);">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <h2>勧められて始めた自動返信ツール、<br>こんな状態になっていませんか？</h2>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 18px;">
+      <div style="display: flex; gap: 12px; align-items: flex-end; max-width: 470px; align-self: flex-start;">
+        <div class="avatar" style="width:44px;height:44px;"></div>
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 20px;box-shadow:0 4px 14px rgba(15,23,42,0.05);">
+          <span style="font-size:15px;color:var(--ink);line-height:1.6;">機能が多すぎて、結局いつも同じ設定しか使えてない</span>
+        </div>
+      </div>
+      <div style="display: flex; gap: 12px; align-items: flex-end; flex-direction: row-reverse; max-width: 470px; align-self: flex-end;">
+        <div class="avatar" style="width:44px;height:44px;"></div>
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 20px;box-shadow:0 4px 14px rgba(15,23,42,0.05);">
+          <span style="font-size:15px;color:var(--ink);line-height:1.6;">ちょっと凝った自動返信は、めちゃめちゃ組みづらいし…</span>
+        </div>
+      </div>
+      <div style="display: flex; gap: 12px; align-items: flex-end; max-width: 470px; align-self: flex-start;">
+        <div class="avatar" style="width:44px;height:44px;"></div>
+        <div style="background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 20px;box-shadow:0 4px 14px rgba(15,23,42,0.05);">
+          <span style="font-size:15px;color:var(--ink);line-height:1.6;">てか、毎月1万、2万の出費は痛すぎる！</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BLOCK 3: 共感 ══ -->
+<section class="sec" style="background: var(--wash-top);">
+  <div style="max-width: 720px; margin: 0 auto; text-align: center;">
+    <h2 style="font-weight:800;font-size:28px;line-height:1.4;letter-spacing:-0.6px;color:var(--ink);">
+      使いこなせていないのは、<br>あなたのせいじゃありません。
+    </h2>
+    <p style="margin: 24px auto 0; max-width: 560px; font-size: 15.5px; color: var(--ink2); line-height: 2;">
+      機能がどれだけあっても、使いにくければ売上には変わらない。大切なのは「機能の数」じゃなく、<strong style="color:var(--accent);font-weight:700;">「迷わず使えること」</strong>。
+    </p>
+  </div>
+</section>
+
+<!-- ══ BLOCK 4: 解決策 ══ -->
+<div style="background:var(--grad-deep);padding:84px 80px;position:relative;overflow:hidden;">
+  <div style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:20px;">
+    <span style="font-size:15px;color:rgba(255,255,255,0.8);">その理想、私たちが形にしました。</span>
+    <div style="display:flex;align-items:center;gap:16px;">
+      <div style="width:56px;height:56px;border-radius:16px;background:rgba(255,255,255,0.9);box-shadow:0 8px 24px rgba(0,0,0,0.2);"></div>
+      <span style="font-weight:800;font-size:60px;letter-spacing:-1.5px;color:#fff;">Plusra</span>
+    </div>
+    <p style="margin:0;font-size:17px;color:rgba(255,255,255,0.92);">Instagramのためだけに、ゼロから作った自動返信ツール。</p>
+  </div>
+</div>
+
+<!-- ══ BLOCK 5: 3つのベネフィット ══ -->
+<section id="features" class="sec" style="background:var(--card);">
+  <div class="sec-inner">
+    <div class="sec-head">
+      <h2>迷わず使えて、ちゃんと売上に変わる。<br>しかも、ずっと0円。</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;">
+      <div class="card" style="padding:26px;display:flex;flex-direction:column;gap:14px;border-radius:18px;">
+        <span style="font-weight:700;font-size:17px;color:var(--ink);">迷わず使える</span>
+        <span style="font-size:13.5px;color:var(--ink2);line-height:1.8;">複雑な設定はゼロ。独自のキャンバス形式で、パズルをつなぐように直感的に組める。</span>
+        <div class="ph" style="height:88px;border-radius:10px;margin-top:2px;"><span>補助UI</span></div>
+      </div>
+      <div class="card" style="padding:26px;display:flex;flex-direction:column;gap:14px;border-radius:18px;">
+        <span style="font-weight:700;font-size:17px;color:var(--ink);">ちゃんと売上に変わる</span>
+        <span style="font-size:13.5px;color:var(--ink2);line-height:1.8;">コメント・DM・ストーリーズ・ライブ。売上の入り口をすべてカバーし24時間稼働。</span>
+        <div class="ph" style="height:88px;border-radius:10px;margin-top:2px;"><span>補助UI</span></div>
+      </div>
+      <div class="card" style="padding:26px;display:flex;flex-direction:column;gap:14px;border-radius:18px;">
+        <span style="font-weight:700;font-size:17px;color:var(--ink);">ずっと0円</span>
+        <span style="font-size:13.5px;color:var(--ink2);line-height:1.8;">毎月1〜2万円の固定費はもう不要。ずっと無料でビジネスを支えます。</span>
+        <div class="ph" style="height:88px;border-radius:10px;margin-top:2px;"><span>補助UI</span></div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:34px;display:flex;flex-direction:column;align-items:center;gap:7px;">
+      <a href="#" class="btn btn-solid">無料で始める →</a>
+      <span style="font-size:11.5px;color:var(--ink3);">登録は1分・クレジットカード不要</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BLOCK 6: 機能紹介 ══ -->
+<section class="sec" style="background:var(--wash-top);">
+  <div class="sec-inner">
+    <div class="sec-head"><h2>Plusra でできること</h2></div>
+    <div style="display:flex;flex-direction:column;gap:30px;">
+
+      <div class="card" style="display:grid;grid-template-columns:0.9fr 1.1fr;overflow:hidden;border-radius:18px;">
+        <div style="padding:14px;order:1;">
+          <div class="ph" style="height:200px;border-radius:12px;"><span>機能01 UIスクリーンショット</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px;justify-content:center;padding:14px 30px;order:2;">
+          <span style="font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:600;">01</span>
+          <span style="font-weight:700;font-size:21px;color:var(--ink);letter-spacing:-0.3px;">全トリガー対応</span>
+          <span style="font-size:14px;color:var(--ink2);line-height:1.85;">コメント・DM・ストーリーズのメンション/リアクション・ライブまで網羅。あらゆるアクションを取りこぼさず自動送信。</span>
+        </div>
+      </div>
+
+      <div class="card" style="display:grid;grid-template-columns:1.1fr 0.9fr;overflow:hidden;border-radius:18px;">
+        <div style="display:flex;flex-direction:column;gap:12px;justify-content:center;padding:14px 30px;order:1;">
+          <span style="font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:600;">02</span>
+          <span style="font-weight:700;font-size:21px;color:var(--ink);letter-spacing:-0.3px;">表現力豊かなメッセージ</span>
+          <span style="font-size:14px;color:var(--ink2);line-height:1.85;">テキストだけでなく独自ボタン・カルーセル・画像/動画を自由に組み合わせ。</span>
+        </div>
+        <div style="padding:14px;order:2;">
+          <div class="ph" style="height:200px;border-radius:12px;"><span>機能02 UIスクリーンショット</span></div>
+        </div>
+      </div>
+
+      <div class="card" style="display:grid;grid-template-columns:0.9fr 1.1fr;overflow:hidden;border-radius:18px;">
+        <div style="padding:14px;order:1;">
+          <div class="ph" style="height:200px;border-radius:12px;"><span>機能03 UIスクリーンショット</span></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:12px;justify-content:center;padding:14px 30px;order:2;">
+          <span style="font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:600;">03</span>
+          <span style="font-weight:700;font-size:21px;color:var(--ink);letter-spacing:-0.3px;">独自のキャンバスUI</span>
+          <span style="font-size:14px;color:var(--ink2);line-height:1.85;">フローを1つのキャンバスに並べてつなぐだけ。実機プレビューで見ながら直感的に組める。</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ BLOCK 7: 比較表（最重要） ══ -->
+<section id="compare" class="sec" style="background:var(--wash-blue);">
+  <div style="max-width:920px;margin:0 auto;">
+    <div class="sec-head"><h2>ほかのツールと比べてみてください</h2></div>
+
+    <div style="background:var(--card);border-radius:20px;padding:8px 24px 24px;box-shadow:0 20px 50px rgba(25,97,213,0.12);border:1px solid var(--line);">
+      <!-- Header -->
+      <div class="cmp-grid" style="align-items:end;">
+        <div></div>
+        <div style="padding:14px 0;text-align:center;border-radius:12px 12px 0 0;background:var(--grad);font-weight:800;font-size:17px;color:#fff;box-shadow:0 8px 20px rgba(25,97,213,0.25);">Plusra</div>
+        <div style="padding:14px 0;text-align:center;font-weight:700;color:var(--ink3);">A社</div>
+        <div style="padding:14px 0;text-align:center;font-weight:700;color:var(--ink3);">B社</div>
+      </div>
+
+      <!-- Row: 月額費用 -->
+      <div class="cmp-grid">
+        <div class="cmp-label">月額費用</div>
+        <div class="cmp-plusra">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5L5.5 11L12 3.5"/></svg>
+          <span style="font-weight:700;font-size:14px;color:var(--accent);">¥0</span>
+        </div>
+        <div class="cmp-other">
+          <span style="font-weight:500;font-size:12px;color:var(--ink4);">¥9,800</span>
+        </div>
+        <div class="cmp-other">
+          <span style="font-weight:500;font-size:12px;color:var(--ink4);">¥15,000</span>
+        </div>
+      </div>
+
+      <!-- Row: 初期費用 -->
+      <div class="cmp-grid">
+        <div class="cmp-label">初期費用</div>
+        <div class="cmp-plusra">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5L5.5 11L12 3.5"/></svg>
+          <span style="font-weight:700;font-size:14px;color:var(--accent);">¥0</span>
+        </div>
+        <div class="cmp-other">
+          <span style="font-weight:500;font-size:12px;color:var(--ink4);">¥50,000</span>
+        </div>
+        <div class="cmp-other">
+          <span style="font-weight:500;font-size:12px;color:var(--ink4);">¥100,000</span>
+        </div>
+      </div>
+
+      <!-- Row: 配信数制限 -->
+      <div class="cmp-grid">
+        <div class="cmp-label">配信数制限</div>
+        <div class="cmp-plusra">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5L5.5 11L12 3.5"/></svg>
+        </div>
+        <div class="cmp-other">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="var(--ink4)" stroke-width="1.8" stroke-linecap="round"><path d="M3 3l7 7M10 3l-7 7"/></svg>
+        </div>
+        <div class="cmp-other">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="var(--ink4)" stroke-width="1.8" stroke-linecap="round"><path d="M3 3l7 7M10 3l-7 7"/></svg>
+        </div>
+      </div>
+
+      <!-- Row: API制限 (last) -->
+      <div class="cmp-grid">
+        <div class="cmp-label" style="border-bottom:none;">API制限</div>
+        <div class="cmp-plusra" style="border-bottom:1px solid var(--accent-line);border-radius:0 0 12px 12px;">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5L5.5 11L12 3.5"/></svg>
+        </div>
+        <div class="cmp-other" style="border-bottom:none;">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="var(--ink4)" stroke-width="1.8" stroke-linecap="round"><path d="M3 3l7 7M10 3l-7 7"/></svg>
+        </div>
+        <div class="cmp-other" style="border-bottom:none;">
+          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="var(--ink4)" stroke-width="1.8" stroke-linecap="round"><path d="M3 3l7 7M10 3l-7 7"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BLOCK 8: お客様の声 ══ -->
+<section class="sec" style="background:var(--card);">
+  <div class="sec-inner">
+    <div class="sec-head"><h2>お客様の声</h2></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;">
+
+      <div class="card" style="padding:22px;border-radius:18px;display:flex;flex-direction:column;gap:14px;">
+        <div style="color:var(--accent);font-size:13px;">★★★★★</div>
+        <p style="margin:0;font-size:13.5px;color:var(--ink);line-height:1.85;">「設定がとにかく簡単で、乗り換えた初日から動きました。」</p>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:4px;">
+          <div class="avatar" style="width:38px;height:38px;"></div>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:var(--ink);">美容サロン経営</div>
+            <div style="font-size:11.5px;color:var(--ink3);">Aさん</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="padding:22px;border-radius:18px;display:flex;flex-direction:column;gap:14px;">
+        <div style="color:var(--accent);font-size:13px;">★★★★★</div>
+        <p style="margin:0;font-size:13.5px;color:var(--ink);line-height:1.85;">「毎月の固定費がゼロになったのが何より大きい。」</p>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:4px;">
+          <div class="avatar" style="width:38px;height:38px;"></div>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:var(--ink);">EC運営</div>
+            <div style="font-size:11.5px;color:var(--ink3);">Bさん</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card" style="padding:22px;border-radius:18px;display:flex;flex-direction:column;gap:14px;">
+        <div style="color:var(--accent);font-size:13px;">★★★★★</div>
+        <p style="margin:0;font-size:13.5px;color:var(--ink);line-height:1.85;">「キャンバスで全体が見えるので、複雑な分岐も迷わず組めました。」</p>
+        <div style="display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:4px;">
+          <div class="avatar" style="width:38px;height:38px;"></div>
+          <div>
+            <div style="font-size:13px;font-weight:700;color:var(--ink);">オンライン講座</div>
+            <div style="font-size:11.5px;color:var(--ink3);">Cさん</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ BLOCK 9: 始め方 ══ -->
+<section class="sec" style="background:var(--wash-top);">
+  <div style="max-width:780px;margin:0 auto;">
+    <div class="sec-head">
+      <h2 style="font-size:28px;">乗り換えは、びっくりするほどシンプルです。</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+
+      <div class="card" style="padding:26px;display:flex;flex-direction:column;gap:10px;border-radius:18px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <span class="pill-accent">Step 1</span>
+          <div style="width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--line2);box-shadow:0 1px 3px rgba(15,23,42,0.06);">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h9M8 4l4 4-4 4"/></svg>
+          </div>
+        </div>
+        <span style="font-weight:700;font-size:17px;color:var(--ink);">アカウント作成（1分）</span>
+        <span style="font-size:13.5px;color:var(--ink2);line-height:1.75;">メールで登録して、Instagramにログイン。これだけ。</span>
+      </div>
+
+      <div class="card" style="padding:26px;display:flex;flex-direction:column;gap:10px;border-radius:18px;">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <span class="pill-accent">Step 2</span>
+          <div style="width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--line2);box-shadow:0 1px 3px rgba(15,23,42,0.06);">
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h9M8 4l4 4-4 4"/></svg>
+          </div>
+        </div>
+        <span style="font-weight:700;font-size:17px;color:var(--ink);">自動返信を作る（5〜30分）</span>
+        <span style="font-size:13.5px;color:var(--ink2);line-height:1.75;">今動いているフローの内容だけ持ってくればOK。</span>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══ BLOCK 10: 料金 ══ -->
+<section id="pricing" style="background:var(--grad-deep);padding:80px 80px;position:relative;overflow:hidden;">
+  <div style="max-width:1000px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:38px;">
+      <span style="display:inline-block;font-size:13px;font-weight:600;letter-spacing:2px;color:rgba(255,255,255,0.7);margin-bottom:10px;">料金</span>
+      <h2 style="font-weight:800;font-size:34px;letter-spacing:-0.8px;color:#fff;">0円で、すべての機能を。</h2>
+    </div>
+    <div style="display:flex;justify-content:center;">
+      <div style="width:400px;border-radius:24px;background:#fff;padding:36px 34px;text-align:center;box-shadow:0 30px 70px rgba(0,0,0,0.3);">
+        <span style="font-size:13px;color:var(--ink3);">月額</span>
+        <div style="font-weight:800;font-size:104px;line-height:0.9;letter-spacing:-4px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:4px 0 8px;">¥0</div>
+        <div style="display:flex;flex-direction:column;gap:11px;margin:20px 0;text-align:left;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5L5.5 11L12 3.5"/></svg>
+            <span style="font-size:14.5px;color:var(--ink);">全機能が使い放題</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5L5.5 11L12 3.5"/></svg>
+            <span style="font-size:14.5px;color:var(--ink);">配信数の制限なし</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5L5.5 11L12 3.5"/></svg>
+            <span style="font-size:14.5px;color:var(--ink);">クレジットカード不要</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;">
+            <svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5L5.5 11L12 3.5"/></svg>
+            <span style="font-size:14.5px;color:var(--ink);">契約期間の縛りなし</span>
+          </div>
+        </div>
+        <a href="#" class="btn btn-solid btn-full">無料で始める →</a>
+        <span style="display:block;font-size:11.5px;color:var(--ink3);margin-top:8px;">クレジットカード不要</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ BLOCK 11: FAQ ══ -->
+<section id="faq" class="sec" style="background:var(--card);">
+  <div style="max-width:760px;margin:0 auto;">
+    <div class="sec-head"><h2>よくある質問</h2></div>
+
+    <div class="faq-item is-open">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Q. 今の自動返信を全部作り直すのは面倒では？</span>
+        <span class="faq-toggle">−</span>
+      </div>
+      <div class="faq-a">実際に稼働している自動返信は、多くても5つ程度ではないでしょうか？Plusraのキャンバスなら、1つの動線を数分でサクサク作れます。「全部を一から作り直す」というより、「必要な5つだけを数分で作る」感覚なので、乗り換えの負担は最小限です。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Q. 一斉配信や抽選など、高度な機能はありますか？</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-a">正直に言うと、現時点ではありません。私たちは「本当に必要な機能を誰もが迷わず使えること」を最優先に開発しています。もし必須の機能があれば、ぜひリクエストしてください。優先的に開発を検討いたします。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Q. 聞いたことのないサービスで不安なのですが…</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-a">累計3,500アカウント以上が利用するInstagram分析ツール「どんバズくん」の運営チームが開発しています。InstagramのMeta公式APIを使用した認定サービスですので、アカウント停止のリスク等もなく安心してご利用いただけます。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span class="faq-q-text">Q. 困ったときのサポートはありますか？</span>
+        <span class="faq-toggle">+</span>
+      </div>
+      <div class="faq-a">サポート体制については現在整備中です。詳細は近日公開予定です。</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ BLOCK 12: 追伸 ══ -->
+<section class="sec" style="background:var(--wash-top);padding:76px 80px 84px;">
+  <div style="max-width:720px;margin:0 auto;">
+    <div style="text-align:center;margin-bottom:24px;">
+      <span style="font-weight:800;font-size:30px;color:var(--ink);letter-spacing:-0.5px;">P.S.</span>
+    </div>
+    <div style="display:flex;gap:20px;background:var(--card);border-radius:20px;padding:28px;border:1px solid var(--line);box-shadow:0 10px 30px rgba(15,23,42,0.06);">
+      <div class="avatar" style="width:60px;height:60px;"></div>
+      <div style="flex:1;">
+        <p style="font-size:14px;color:var(--ink2);line-height:2;margin:0;">
+          2022年、開発者の私もInstagramの運用を始めました。DM対応を少しでも効率化して売上につなげたくて、自動返信ツールに課金しました。売上がまだないときの月2万円は、重かった。しかも、使いこなせている実感もなかった。<br><br>
+          だから、自分たちの手で作りました。
+        </p>
+        <p style="margin:18px 0 0;font-size:16px;font-weight:700;color:var(--ink);line-height:1.7;">迷わず使えて、ちゃんと売上に変わる。安心して使い続けられるツールを。</p>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:30px;display:flex;flex-direction:column;align-items:center;gap:7px;">
+      <a href="#" class="btn btn-solid">無料で始める →</a>
+      <span style="font-size:11.5px;color:var(--ink3);">クレジットカード不要</span>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer style="padding:34px 80px;background:var(--ink);display:flex;align-items:center;justify-content:space-between;">
+  <span style="font-weight:800;font-size:16px;color:#fff;">Plusra</span>
+  <span style="font-family:var(--mono);font-size:11px;color:rgba(255,255,255,0.5);">運営：どんバズくん チーム · Meta公式API認定</span>
+</footer>
+
+<script>
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('is-open');
+  document.querySelectorAll('.faq-item').forEach(el => {
+    el.classList.remove('is-open');
+    el.querySelector('.faq-toggle').textContent = '+';
+  });
+  if (!isOpen) {
+    item.classList.add('is-open');
+    btn.querySelector('.faq-toggle').textContent = '−';
+  }
+}
+</script>
+</body>
+</html>
