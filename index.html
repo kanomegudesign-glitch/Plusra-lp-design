@@ -1,680 +1,724 @@
 <!doctype html>
 <html lang="ja">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Plusra — 迷わず使えて、ちゃんと売上に変わる。</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Plusra フルLPワイヤー</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
 <style>
-:root {
-  --accent:       #1961D5;
-  --accent2:      #56B8E8;
-  --accent-soft:  #EFF6FF;
-  --accent-soft2: #DBEAFE;
-  --accent-line:  #8DB8FF;
-  --grad:         linear-gradient(135deg, #1961D5 0%, #56B8E8 100%);
-  --grad-deep:    linear-gradient(160deg, #0E3A9A 0%, #1961D5 60%, #3E86E0 100%);
-  --wash-top:     linear-gradient(180deg, #FFFFFF 0%, #EEF4FF 100%);
-  --wash-blue:    linear-gradient(180deg, #EEF4FF 0%, #DCE9FE 100%);
-  --card:         #FFFFFF;
-  --card2:        #F8FAFC;
-  --panel2:       #F1F5F9;
-  --line:         #E2E8F0;
-  --line2:        #CBD5E1;
-  --ink:          #0F172A;
-  --ink2:         #334155;
-  --ink3:         #64748B;
-  --ink4:         #94A3B8;
-  --sans:         'Noto Sans JP', system-ui, -apple-system, sans-serif;
-  --mono:         ui-monospace, 'SF Mono', Menlo, monospace;
-}
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
-body { font-family: var(--sans); background: var(--card); color: var(--ink); }
-
-/* ── Placeholder ── */
-.ph {
-  background: repeating-linear-gradient(135deg, #EFF3F8 0 10px, #F8FAFC 10px 20px);
-  border: 1px dashed var(--line2);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  flex-shrink: 0;
-}
-.ph span {
-  font-family: var(--mono);
-  font-size: 11px;
-  color: var(--ink3);
-  letter-spacing: 0.3px;
-  padding: 4px 9px;
-  border: 1px solid var(--line);
-  border-radius: 6px;
-  background: var(--card);
-  text-align: center;
-  line-height: 1.4;
-}
-
-/* ── Buttons ── */
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 52px;
-  padding: 0 30px;
-  border-radius: 999px;
-  font-weight: 700;
-  font-size: 16px;
-  letter-spacing: 0.2px;
-  text-decoration: none;
-  border: none;
-  cursor: pointer;
-}
-.btn-hero-solid {
-  background: #fff;
-  color: var(--accent);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.28);
-}
-.btn-hero-outline {
-  background: transparent;
-  color: #fff;
-  border: 1.5px solid rgba(255,255,255,0.4);
-  font-size: 15px;
-  font-weight: 600;
-  height: 52px;
-}
-.btn-solid {
-  background: var(--grad);
-  color: #fff;
-  box-shadow: 0 6px 18px rgba(25,97,213,0.28);
-  height: 48px;
-  font-size: 15px;
-}
-.btn-full { width: 100%; }
-.btn:hover { opacity: 0.9; }
-
-/* ── Nav CTA ── */
-.nav-cta {
-  height: 38px;
-  padding: 0 18px;
-  border-radius: 999px;
-  background: #fff;
-  color: var(--accent);
-  font-weight: 700;
-  font-size: 13px;
-  display: inline-flex;
-  align-items: center;
-  text-decoration: none;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
-}
-
-/* ── Pills ── */
-.pill-accent {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 12px;
-  font-weight: 600;
-  padding: 6px 12px;
-  border-radius: 999px;
-  color: var(--accent);
-  background: var(--accent-soft);
-  border: 1px solid var(--accent-line);
-}
-
-/* ── Avatar ── */
-.avatar {
-  border-radius: 50%;
-  background: var(--panel2);
-  border: 1px solid var(--line);
-  flex-shrink: 0;
-}
-
-/* ── Card ── */
-.card {
-  background: var(--card);
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  box-shadow: 0 1px 2px rgba(15,23,42,0.04);
-}
-
-/* ── Section ── */
-.sec { padding: 76px 80px; }
-.sec-inner { max-width: 1000px; margin: 0 auto; }
-.sec-head { text-align: center; margin-bottom: 40px; }
-.sec-head h2 {
-  font-weight: 800;
-  font-size: 30px;
-  line-height: 1.3;
-  letter-spacing: -0.6px;
-  color: var(--ink);
-}
-
-/* ── FAQ ── */
-.faq-item {
-  border: 1px solid var(--line);
-  border-radius: 14px;
-  background: var(--card);
-  overflow: hidden;
-  box-shadow: 0 1px 3px rgba(15,23,42,0.04);
-}
-.faq-item + .faq-item { margin-top: 12px; }
-.faq-item.is-open { border-color: var(--accent-line); background: var(--accent-soft); }
-.faq-q {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 18px 22px;
-  cursor: pointer;
-  user-select: none;
-}
-.faq-q-text { font-weight: 600; font-size: 15px; color: var(--ink); }
-.faq-toggle { font-family: var(--mono); font-size: 18px; color: var(--accent); flex-shrink: 0; margin-left: 16px; }
-.faq-a { display: none; padding: 0 22px 20px; font-size: 14px; color: var(--ink2); line-height: 1.85; }
-.faq-item.is-open .faq-a { display: block; }
-
-/* ── Comparison table ── */
-.cmp-grid { display: grid; grid-template-columns: 1.5fr 1.1fr 1fr 1fr; align-items: center; }
-.cmp-label {
-  padding: 14px 8px 14px 2px;
-  font-size: 12.5px;
-  font-weight: 600;
-  color: var(--ink);
-  border-bottom: 1px solid var(--line);
-}
-.cmp-plusra {
-  padding: 14px 6px;
-  background: var(--accent-soft);
-  border-left: 1px solid var(--accent-line);
-  border-right: 1px solid var(--accent-line);
-  border-bottom: 1px solid var(--accent-soft2);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3px;
-  text-align: center;
-}
-.cmp-other {
-  padding: 14px 6px;
-  border-bottom: 1px solid var(--line);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3px;
-  text-align: center;
-}
+  html, body { margin: 0; padding: 0; background: #E7ECF3; }
+  * { box-sizing: border-box; }
 </style>
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 </head>
 <body>
+<div id="root"></div>
+<script type="text/babel">
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// wf-kit.jsx — Plusra LP wireframe kit, themed to the Plusra Design System
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+(function () {
+const WF = {
+  canvas:  '#E7ECF3',
+  card:    '#FFFFFF',
+  card2:   '#F8FAFC',
+  panel:   '#F8FAFC',
+  panel2:  '#F1F5F9',
+  line:    '#E2E8F0',
+  line2:   '#CBD5E1',
+  ink:     '#0F172A',
+  ink2:    '#334155',
+  ink3:    '#64748B',
+  ink4:    '#94A3B8',
+  accent:   '#1961D5',
+  accent2:  '#56B8E8',
+  accentDk: '#144BB0',
+  accentSoft: '#EFF6FF',
+  accentSoft2:'#DBEAFE',
+  accentLine: '#8DB8FF',
+  grad: 'linear-gradient(135deg, #1961D5 0%, #56B8E8 100%)',
+  gradDeep: 'linear-gradient(160deg, #0E3A9A 0%, #1961D5 60%, #3E86E0 100%)',
+  washTop:  'linear-gradient(180deg, #FFFFFF 0%, #EEF4FF 100%)',
+  washBlue: 'linear-gradient(180deg, #EEF4FF 0%, #DCE9FE 100%)',
+  washSoft: 'linear-gradient(180deg, #F8FAFF 0%, #FFFFFF 100%)',
+  heroWash: 'radial-gradient(120% 90% at 80% 0%, #DCEAFE 0%, #EEF4FF 40%, #FFFFFF 75%)',
+  glass:    'rgba(255,255,255,0.65)',
+  yel:     '#F5B82E',
+  yelGrad: 'linear-gradient(135deg, #EF9C0C 0%, #FED51E 100%)',
+  ok:      '#2ECA8B', okSoft: '#E1F8ED',
+  warn:    '#F58733', warnSoft: '#FEF0E6',
+  danger:  '#F05252', dangerSoft: '#FEECEE',
+  sans: '"gothic-mb101", "Gothic MB101", "ゴシックMB101", "Zen Kaku Gothic New", system-ui, -apple-system, sans-serif',
+  mono: 'ui-monospace, "SF Mono", Menlo, monospace',
+  radius: 12,
+};
 
-<!-- ══ BLOCK 1: FV（ダークブルー背景 + PCモック） ══ -->
-<div style="position: relative; min-height: 720px; display: flex; flex-direction: column; overflow: hidden; background: radial-gradient(80% 95% at 4% -8%, #2E6FE6 0%, #1A4DC0 28%, #0E2E86 58%, #0A1E5C 100%);">
-
-  <!-- Sticky Nav (transparent, white text) -->
-  <nav style="position: sticky; top: 0; z-index: 50; display: flex; align-items: center; justify-content: space-between; padding: 0 40px; height: 66px; background: transparent;">
-    <div style="display: flex; align-items: center; gap: 9px;">
-      <div style="width: 26px; height: 26px; border-radius: 8px; background: var(--grad);"></div>
-      <span style="font-weight: 800; font-size: 18px; color: #fff; letter-spacing: -0.4px;">Plusra</span>
-    </div>
-    <div style="display: flex; gap: 28px;">
-      <a href="#features" style="font-size: 14px; font-weight: 500; color: #fff; text-decoration: none;">機能</a>
-      <a href="#compare" style="font-size: 14px; font-weight: 500; color: #fff; text-decoration: none;">比較</a>
-      <a href="#pricing" style="font-size: 14px; font-weight: 500; color: #fff; text-decoration: none;">料金</a>
-      <a href="#faq" style="font-size: 14px; font-weight: 500; color: #fff; text-decoration: none;">FAQ</a>
-    </div>
-    <a href="#" class="nav-cta">無料で始める</a>
-  </nav>
-
-  <!-- Hero content -->
-  <div style="flex: 1; display: flex; align-items: center; position: relative;">
-    <!-- Left: copy -->
-    <div style="position: relative; z-index: 2; max-width: 620px; padding: 40px 0 40px 80px; display: flex; flex-direction: column; align-items: flex-start;">
-      <span style="display: inline-flex; align-items: center; gap: 8px; font-size: 12.5px; font-weight: 600; color: rgba(255,255,255,0.9); padding: 7px 14px; border-radius: 999px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); margin-bottom: 24px;">iSTEP / エルグラム / ManyChat からの乗り換え専用</span>
-      <h1 style="margin: 0; font-weight: 800; font-size: 50px; line-height: 1.2; letter-spacing: -1.4px; color: #fff;">迷わず使えて、<br>ちゃんと売上に変わる。</h1>
-      <p style="margin: 22px 0 0; font-size: 16px; color: rgba(255,255,255,0.82); line-height: 1.85; max-width: 440px;">毎月高い固定費を払っているのに、自動返信を「使いこなせていない」あなたへ。複雑な設定も、毎月の課金も、もういりません。</p>
-      <div style="display: flex; flex-direction: column; gap: 11px; margin: 26px 0 0;">
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="#7FC2FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5L5.5 11L12 3.5"/></svg>
-          <span style="font-size: 15px; color: rgba(255,255,255,0.92);">初期費用・月額ずっと ¥0</span>
-        </div>
-        <div style="display: flex; align-items: center; gap: 10px;">
-          <svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="#7FC2FF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5L5.5 11L12 3.5"/></svg>
-          <span style="font-size: 15px; color: rgba(255,255,255,0.92);">Meta公式API利用で安心</span>
-        </div>
-      </div>
-      <div style="display: flex; gap: 14px; margin: 30px 0 14px; align-items: center; flex-wrap: wrap;">
-        <a href="#" class="btn btn-hero-solid">無料で始める →</a>
-        <a href="#features" class="btn btn-hero-outline">機能を見る</a>
-      </div>
-      <span style="font-size: 12px; color: rgba(255,255,255,0.6);">登録は1分・クレジットカード不要</span>
-    </div>
-
-    <!-- Right: PC mock (absolutely positioned) -->
-    <div style="position: absolute; right: -70px; top: 50%; transform: translateY(-50%); width: 760px; z-index: 1;">
-      <div style="border-radius: 18px 0 0 18px; overflow: hidden; background: #fff; box-shadow: 0 50px 110px rgba(0,0,0,0.5); border: 1px solid rgba(255,255,255,0.5);">
-        <!-- Browser chrome -->
-        <div style="height: 42px; display: flex; align-items: center; gap: 14px; padding: 0 18px; background: #F1F5F9; border-bottom: 1px solid var(--line);">
-          <div style="display: flex; gap: 7px;">
-            <div style="width: 11px; height: 11px; border-radius: 50%; background: var(--line);"></div>
-            <div style="width: 11px; height: 11px; border-radius: 50%; background: var(--line);"></div>
-            <div style="width: 11px; height: 11px; border-radius: 50%; background: var(--line);"></div>
-          </div>
-          <span style="font-family: var(--mono); font-size: 11.5px; color: var(--ink3);">Plusra — キャンバス編集画面</span>
-        </div>
-        <!-- Content area -->
-        <div style="position: relative; height: 460px; background: repeating-linear-gradient(135deg, #EFF3F8 0 12px, #F8FAFC 12px 24px); display: flex; align-items: center; justify-content: center;">
-          <div style="width: 88px; height: 88px; border-radius: 50%; background: var(--grad); display: flex; align-items: center; justify-content: center; box-shadow: 0 16px 40px rgba(25,97,213,0.45);">
-            <div style="width: 0; height: 0; border-style: solid; border-width: 15px 0 15px 24px; border-color: transparent transparent transparent #fff; margin-left: 5px;"></div>
-          </div>
-          <span style="position: absolute; bottom: 18px; font-family: var(--mono); font-size: 12px; color: var(--ink3); padding: 5px 12px; border: 1px solid var(--line); border-radius: 6px; background: var(--card);">サービス画面（動画）</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- ══ BLOCK 2: 問題提起 ══ -->
-<section class="sec" style="background: var(--card);">
-  <div class="sec-inner">
-    <div class="sec-head">
-      <h2>勧められて始めた自動返信ツール、<br>こんな状態になっていませんか？</h2>
-    </div>
-    <div style="display: flex; flex-direction: column; gap: 18px;">
-      <div style="display: flex; gap: 12px; align-items: flex-end; max-width: 470px; align-self: flex-start;">
-        <div class="avatar" style="width:44px;height:44px;"></div>
-        <div style="background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 20px;box-shadow:0 4px 14px rgba(15,23,42,0.05);">
-          <span style="font-size:15px;color:var(--ink);line-height:1.6;">機能が多すぎて、結局いつも同じ設定しか使えてない</span>
-        </div>
-      </div>
-      <div style="display: flex; gap: 12px; align-items: flex-end; flex-direction: row-reverse; max-width: 470px; align-self: flex-end;">
-        <div class="avatar" style="width:44px;height:44px;"></div>
-        <div style="background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 20px;box-shadow:0 4px 14px rgba(15,23,42,0.05);">
-          <span style="font-size:15px;color:var(--ink);line-height:1.6;">ちょっと凝った自動返信は、めちゃめちゃ組みづらいし…</span>
-        </div>
-      </div>
-      <div style="display: flex; gap: 12px; align-items: flex-end; max-width: 470px; align-self: flex-start;">
-        <div class="avatar" style="width:44px;height:44px;"></div>
-        <div style="background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px 20px;box-shadow:0 4px 14px rgba(15,23,42,0.05);">
-          <span style="font-size:15px;color:var(--ink);line-height:1.6;">てか、毎月1万、2万の出費は痛すぎる！</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ BLOCK 3: 共感 ══ -->
-<section class="sec" style="background: var(--wash-top);">
-  <div style="max-width: 720px; margin: 0 auto; text-align: center;">
-    <h2 style="font-weight:800;font-size:28px;line-height:1.4;letter-spacing:-0.6px;color:var(--ink);">
-      使いこなせていないのは、<br>あなたのせいじゃありません。
-    </h2>
-    <p style="margin: 24px auto 0; max-width: 560px; font-size: 15.5px; color: var(--ink2); line-height: 2;">
-      機能がどれだけあっても、使いにくければ売上には変わらない。大切なのは「機能の数」じゃなく、<strong style="color:var(--accent);font-weight:700;">「迷わず使えること」</strong>。
-    </p>
-  </div>
-</section>
-
-<!-- ══ BLOCK 4: 解決策 ══ -->
-<div style="background:var(--grad-deep);padding:84px 80px;position:relative;overflow:hidden;">
-  <div style="text-align:center;display:flex;flex-direction:column;align-items:center;gap:20px;">
-    <span style="font-size:15px;color:rgba(255,255,255,0.8);">その理想、私たちが形にしました。</span>
-    <div style="display:flex;align-items:center;gap:16px;">
-      <div style="width:56px;height:56px;border-radius:16px;background:rgba(255,255,255,0.9);box-shadow:0 8px 24px rgba(0,0,0,0.2);"></div>
-      <span style="font-weight:800;font-size:60px;letter-spacing:-1.5px;color:#fff;">Plusra</span>
-    </div>
-    <p style="margin:0;font-size:17px;color:rgba(255,255,255,0.92);">Instagramのためだけに、ゼロから作った自動返信ツール。</p>
-  </div>
-</div>
-
-<!-- ══ BLOCK 5: 3つのベネフィット ══ -->
-<section id="features" class="sec" style="background:var(--card);">
-  <div class="sec-inner">
-    <div class="sec-head">
-      <h2>迷わず使えて、ちゃんと売上に変わる。<br>しかも、ずっと0円。</h2>
-    </div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:22px;">
-      <div class="card" style="padding:26px;display:flex;flex-direction:column;gap:14px;border-radius:18px;">
-        <span style="font-weight:700;font-size:17px;color:var(--ink);">迷わず使える</span>
-        <span style="font-size:13.5px;color:var(--ink2);line-height:1.8;">複雑な設定はゼロ。独自のキャンバス形式で、パズルをつなぐように直感的に組める。</span>
-        <div class="ph" style="height:88px;border-radius:10px;margin-top:2px;"><span>補助UI</span></div>
-      </div>
-      <div class="card" style="padding:26px;display:flex;flex-direction:column;gap:14px;border-radius:18px;">
-        <span style="font-weight:700;font-size:17px;color:var(--ink);">ちゃんと売上に変わる</span>
-        <span style="font-size:13.5px;color:var(--ink2);line-height:1.8;">コメント・DM・ストーリーズ・ライブ。売上の入り口をすべてカバーし24時間稼働。</span>
-        <div class="ph" style="height:88px;border-radius:10px;margin-top:2px;"><span>補助UI</span></div>
-      </div>
-      <div class="card" style="padding:26px;display:flex;flex-direction:column;gap:14px;border-radius:18px;">
-        <span style="font-weight:700;font-size:17px;color:var(--ink);">ずっと0円</span>
-        <span style="font-size:13.5px;color:var(--ink2);line-height:1.8;">毎月1〜2万円の固定費はもう不要。ずっと無料でビジネスを支えます。</span>
-        <div class="ph" style="height:88px;border-radius:10px;margin-top:2px;"><span>補助UI</span></div>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:34px;display:flex;flex-direction:column;align-items:center;gap:7px;">
-      <a href="#" class="btn btn-solid">無料で始める →</a>
-      <span style="font-size:11.5px;color:var(--ink3);">登録は1分・クレジットカード不要</span>
-    </div>
-  </div>
-</section>
-
-<!-- ══ BLOCK 6: 機能紹介 ══ -->
-<section class="sec" style="background:var(--wash-top);">
-  <div class="sec-inner">
-    <div class="sec-head"><h2>Plusra でできること</h2></div>
-    <div style="display:flex;flex-direction:column;gap:30px;">
-
-      <div class="card" style="display:grid;grid-template-columns:0.9fr 1.1fr;overflow:hidden;border-radius:18px;">
-        <div style="padding:14px;order:1;">
-          <div class="ph" style="height:200px;border-radius:12px;"><span>機能01 UIスクリーンショット</span></div>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:12px;justify-content:center;padding:14px 30px;order:2;">
-          <span style="font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:600;">01</span>
-          <span style="font-weight:700;font-size:21px;color:var(--ink);letter-spacing:-0.3px;">全トリガー対応</span>
-          <span style="font-size:14px;color:var(--ink2);line-height:1.85;">コメント・DM・ストーリーズのメンション/リアクション・ライブまで網羅。あらゆるアクションを取りこぼさず自動送信。</span>
-        </div>
-      </div>
-
-      <div class="card" style="display:grid;grid-template-columns:1.1fr 0.9fr;overflow:hidden;border-radius:18px;">
-        <div style="display:flex;flex-direction:column;gap:12px;justify-content:center;padding:14px 30px;order:1;">
-          <span style="font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:600;">02</span>
-          <span style="font-weight:700;font-size:21px;color:var(--ink);letter-spacing:-0.3px;">表現力豊かなメッセージ</span>
-          <span style="font-size:14px;color:var(--ink2);line-height:1.85;">テキストだけでなく独自ボタン・カルーセル・画像/動画を自由に組み合わせ。</span>
-        </div>
-        <div style="padding:14px;order:2;">
-          <div class="ph" style="height:200px;border-radius:12px;"><span>機能02 UIスクリーンショット</span></div>
-        </div>
-      </div>
-
-      <div class="card" style="display:grid;grid-template-columns:0.9fr 1.1fr;overflow:hidden;border-radius:18px;">
-        <div style="padding:14px;order:1;">
-          <div class="ph" style="height:200px;border-radius:12px;"><span>機能03 UIスクリーンショット</span></div>
-        </div>
-        <div style="display:flex;flex-direction:column;gap:12px;justify-content:center;padding:14px 30px;order:2;">
-          <span style="font-family:var(--mono);font-size:13px;color:var(--accent);font-weight:600;">03</span>
-          <span style="font-weight:700;font-size:21px;color:var(--ink);letter-spacing:-0.3px;">独自のキャンバスUI</span>
-          <span style="font-size:14px;color:var(--ink2);line-height:1.85;">フローを1つのキャンバスに並べてつなぐだけ。実機プレビューで見ながら直感的に組める。</span>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══ BLOCK 7: 比較表（最重要） ══ -->
-<section id="compare" class="sec" style="background:var(--wash-blue);">
-  <div style="max-width:920px;margin:0 auto;">
-    <div class="sec-head"><h2>ほかのツールと比べてみてください</h2></div>
-
-    <div style="background:var(--card);border-radius:20px;padding:8px 24px 24px;box-shadow:0 20px 50px rgba(25,97,213,0.12);border:1px solid var(--line);">
-      <!-- Header -->
-      <div class="cmp-grid" style="align-items:end;">
-        <div></div>
-        <div style="padding:14px 0;text-align:center;border-radius:12px 12px 0 0;background:var(--grad);font-weight:800;font-size:17px;color:#fff;box-shadow:0 8px 20px rgba(25,97,213,0.25);">Plusra</div>
-        <div style="padding:14px 0;text-align:center;font-weight:700;color:var(--ink3);">A社</div>
-        <div style="padding:14px 0;text-align:center;font-weight:700;color:var(--ink3);">B社</div>
-      </div>
-
-      <!-- Row: 月額費用 -->
-      <div class="cmp-grid">
-        <div class="cmp-label">月額費用</div>
-        <div class="cmp-plusra">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5L5.5 11L12 3.5"/></svg>
-          <span style="font-weight:700;font-size:14px;color:var(--accent);">¥0</span>
-        </div>
-        <div class="cmp-other">
-          <span style="font-weight:500;font-size:12px;color:var(--ink4);">¥9,800</span>
-        </div>
-        <div class="cmp-other">
-          <span style="font-weight:500;font-size:12px;color:var(--ink4);">¥15,000</span>
-        </div>
-      </div>
-
-      <!-- Row: 初期費用 -->
-      <div class="cmp-grid">
-        <div class="cmp-label">初期費用</div>
-        <div class="cmp-plusra">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5L5.5 11L12 3.5"/></svg>
-          <span style="font-weight:700;font-size:14px;color:var(--accent);">¥0</span>
-        </div>
-        <div class="cmp-other">
-          <span style="font-weight:500;font-size:12px;color:var(--ink4);">¥50,000</span>
-        </div>
-        <div class="cmp-other">
-          <span style="font-weight:500;font-size:12px;color:var(--ink4);">¥100,000</span>
-        </div>
-      </div>
-
-      <!-- Row: 配信数制限 -->
-      <div class="cmp-grid">
-        <div class="cmp-label">配信数制限</div>
-        <div class="cmp-plusra">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5L5.5 11L12 3.5"/></svg>
-        </div>
-        <div class="cmp-other">
-          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="var(--ink4)" stroke-width="1.8" stroke-linecap="round"><path d="M3 3l7 7M10 3l-7 7"/></svg>
-        </div>
-        <div class="cmp-other">
-          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="var(--ink4)" stroke-width="1.8" stroke-linecap="round"><path d="M3 3l7 7M10 3l-7 7"/></svg>
-        </div>
-      </div>
-
-      <!-- Row: API制限 (last) -->
-      <div class="cmp-grid">
-        <div class="cmp-label" style="border-bottom:none;">API制限</div>
-        <div class="cmp-plusra" style="border-bottom:1px solid var(--accent-line);border-radius:0 0 12px 12px;">
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5L5.5 11L12 3.5"/></svg>
-        </div>
-        <div class="cmp-other" style="border-bottom:none;">
-          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="var(--ink4)" stroke-width="1.8" stroke-linecap="round"><path d="M3 3l7 7M10 3l-7 7"/></svg>
-        </div>
-        <div class="cmp-other" style="border-bottom:none;">
-          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="var(--ink4)" stroke-width="1.8" stroke-linecap="round"><path d="M3 3l7 7M10 3l-7 7"/></svg>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ BLOCK 8: お客様の声 ══ -->
-<section class="sec" style="background:var(--card);">
-  <div class="sec-inner">
-    <div class="sec-head"><h2>お客様の声</h2></div>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;">
-
-      <div class="card" style="padding:22px;border-radius:18px;display:flex;flex-direction:column;gap:14px;">
-        <div style="color:var(--accent);font-size:13px;">★★★★★</div>
-        <p style="margin:0;font-size:13.5px;color:var(--ink);line-height:1.85;">「設定がとにかく簡単で、乗り換えた初日から動きました。」</p>
-        <div style="display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:4px;">
-          <div class="avatar" style="width:38px;height:38px;"></div>
-          <div>
-            <div style="font-size:13px;font-weight:700;color:var(--ink);">美容サロン経営</div>
-            <div style="font-size:11.5px;color:var(--ink3);">Aさん</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card" style="padding:22px;border-radius:18px;display:flex;flex-direction:column;gap:14px;">
-        <div style="color:var(--accent);font-size:13px;">★★★★★</div>
-        <p style="margin:0;font-size:13.5px;color:var(--ink);line-height:1.85;">「毎月の固定費がゼロになったのが何より大きい。」</p>
-        <div style="display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:4px;">
-          <div class="avatar" style="width:38px;height:38px;"></div>
-          <div>
-            <div style="font-size:13px;font-weight:700;color:var(--ink);">EC運営</div>
-            <div style="font-size:11.5px;color:var(--ink3);">Bさん</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card" style="padding:22px;border-radius:18px;display:flex;flex-direction:column;gap:14px;">
-        <div style="color:var(--accent);font-size:13px;">★★★★★</div>
-        <p style="margin:0;font-size:13.5px;color:var(--ink);line-height:1.85;">「キャンバスで全体が見えるので、複雑な分岐も迷わず組めました。」</p>
-        <div style="display:flex;align-items:center;gap:10px;margin-top:auto;padding-top:4px;">
-          <div class="avatar" style="width:38px;height:38px;"></div>
-          <div>
-            <div style="font-size:13px;font-weight:700;color:var(--ink);">オンライン講座</div>
-            <div style="font-size:11.5px;color:var(--ink3);">Cさん</div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══ BLOCK 9: 始め方 ══ -->
-<section class="sec" style="background:var(--wash-top);">
-  <div style="max-width:780px;margin:0 auto;">
-    <div class="sec-head">
-      <h2 style="font-size:28px;">乗り換えは、びっくりするほどシンプルです。</h2>
-    </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
-
-      <div class="card" style="padding:26px;display:flex;flex-direction:column;gap:10px;border-radius:18px;">
-        <div style="display:flex;align-items:center;justify-content:space-between;">
-          <span class="pill-accent">Step 1</span>
-          <div style="width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--line2);box-shadow:0 1px 3px rgba(15,23,42,0.06);">
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h9M8 4l4 4-4 4"/></svg>
-          </div>
-        </div>
-        <span style="font-weight:700;font-size:17px;color:var(--ink);">アカウント作成（1分）</span>
-        <span style="font-size:13.5px;color:var(--ink2);line-height:1.75;">メールで登録して、Instagramにログイン。これだけ。</span>
-      </div>
-
-      <div class="card" style="padding:26px;display:flex;flex-direction:column;gap:10px;border-radius:18px;">
-        <div style="display:flex;align-items:center;justify-content:space-between;">
-          <span class="pill-accent">Step 2</span>
-          <div style="width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--card);border:1px solid var(--line2);box-shadow:0 1px 3px rgba(15,23,42,0.06);">
-            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h9M8 4l4 4-4 4"/></svg>
-          </div>
-        </div>
-        <span style="font-weight:700;font-size:17px;color:var(--ink);">自動返信を作る（5〜30分）</span>
-        <span style="font-size:13.5px;color:var(--ink2);line-height:1.75;">今動いているフローの内容だけ持ってくればOK。</span>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══ BLOCK 10: 料金 ══ -->
-<section id="pricing" style="background:var(--grad-deep);padding:80px 80px;position:relative;overflow:hidden;">
-  <div style="max-width:1000px;margin:0 auto;">
-    <div style="text-align:center;margin-bottom:38px;">
-      <span style="display:inline-block;font-size:13px;font-weight:600;letter-spacing:2px;color:rgba(255,255,255,0.7);margin-bottom:10px;">料金</span>
-      <h2 style="font-weight:800;font-size:34px;letter-spacing:-0.8px;color:#fff;">0円で、すべての機能を。</h2>
-    </div>
-    <div style="display:flex;justify-content:center;">
-      <div style="width:400px;border-radius:24px;background:#fff;padding:36px 34px;text-align:center;box-shadow:0 30px 70px rgba(0,0,0,0.3);">
-        <span style="font-size:13px;color:var(--ink3);">月額</span>
-        <div style="font-weight:800;font-size:104px;line-height:0.9;letter-spacing:-4px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin:4px 0 8px;">¥0</div>
-        <div style="display:flex;flex-direction:column;gap:11px;margin:20px 0;text-align:left;">
-          <div style="display:flex;align-items:center;gap:10px;">
-            <svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5L5.5 11L12 3.5"/></svg>
-            <span style="font-size:14.5px;color:var(--ink);">全機能が使い放題</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;">
-            <svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5L5.5 11L12 3.5"/></svg>
-            <span style="font-size:14.5px;color:var(--ink);">配信数の制限なし</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;">
-            <svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5L5.5 11L12 3.5"/></svg>
-            <span style="font-size:14.5px;color:var(--ink);">クレジットカード不要</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;">
-            <svg width="16" height="16" viewBox="0 0 14 14" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7.5L5.5 11L12 3.5"/></svg>
-            <span style="font-size:14.5px;color:var(--ink);">契約期間の縛りなし</span>
-          </div>
-        </div>
-        <a href="#" class="btn btn-solid btn-full">無料で始める →</a>
-        <span style="display:block;font-size:11.5px;color:var(--ink3);margin-top:8px;">クレジットカード不要</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ BLOCK 11: FAQ ══ -->
-<section id="faq" class="sec" style="background:var(--card);">
-  <div style="max-width:760px;margin:0 auto;">
-    <div class="sec-head"><h2>よくある質問</h2></div>
-
-    <div class="faq-item is-open">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        <span class="faq-q-text">Q. 今の自動返信を全部作り直すのは面倒では？</span>
-        <span class="faq-toggle">−</span>
-      </div>
-      <div class="faq-a">実際に稼働している自動返信は、多くても5つ程度ではないでしょうか？Plusraのキャンバスなら、1つの動線を数分でサクサク作れます。「全部を一から作り直す」というより、「必要な5つだけを数分で作る」感覚なので、乗り換えの負担は最小限です。</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        <span class="faq-q-text">Q. 一斉配信や抽選など、高度な機能はありますか？</span>
-        <span class="faq-toggle">+</span>
-      </div>
-      <div class="faq-a">正直に言うと、現時点ではありません。私たちは「本当に必要な機能を誰もが迷わず使えること」を最優先に開発しています。もし必須の機能があれば、ぜひリクエストしてください。優先的に開発を検討いたします。</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        <span class="faq-q-text">Q. 聞いたことのないサービスで不安なのですが…</span>
-        <span class="faq-toggle">+</span>
-      </div>
-      <div class="faq-a">累計3,500アカウント以上が利用するInstagram分析ツール「どんバズくん」の運営チームが開発しています。InstagramのMeta公式APIを使用した認定サービスですので、アカウント停止のリスク等もなく安心してご利用いただけます。</div>
-    </div>
-
-    <div class="faq-item">
-      <div class="faq-q" onclick="toggleFaq(this)">
-        <span class="faq-q-text">Q. 困ったときのサポートはありますか？</span>
-        <span class="faq-toggle">+</span>
-      </div>
-      <div class="faq-a">サポート体制については現在整備中です。詳細は近日公開予定です。</div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ══ BLOCK 12: 追伸 ══ -->
-<section class="sec" style="background:var(--wash-top);padding:76px 80px 84px;">
-  <div style="max-width:720px;margin:0 auto;">
-    <div style="text-align:center;margin-bottom:24px;">
-      <span style="font-weight:800;font-size:30px;color:var(--ink);letter-spacing:-0.5px;">P.S.</span>
-    </div>
-    <div style="display:flex;gap:20px;background:var(--card);border-radius:20px;padding:28px;border:1px solid var(--line);box-shadow:0 10px 30px rgba(15,23,42,0.06);">
-      <div class="avatar" style="width:60px;height:60px;"></div>
-      <div style="flex:1;">
-        <p style="font-size:14px;color:var(--ink2);line-height:2;margin:0;">
-          2022年、開発者の私もInstagramの運用を始めました。DM対応を少しでも効率化して売上につなげたくて、自動返信ツールに課金しました。売上がまだないときの月2万円は、重かった。しかも、使いこなせている実感もなかった。<br><br>
-          だから、自分たちの手で作りました。
-        </p>
-        <p style="margin:18px 0 0;font-size:16px;font-weight:700;color:var(--ink);line-height:1.7;">迷わず使えて、ちゃんと売上に変わる。安心して使い続けられるツールを。</p>
-      </div>
-    </div>
-    <div style="text-align:center;margin-top:30px;display:flex;flex-direction:column;align-items:center;gap:7px;">
-      <a href="#" class="btn btn-solid">無料で始める →</a>
-      <span style="font-size:11.5px;color:var(--ink3);">クレジットカード不要</span>
-    </div>
-  </div>
-</section>
-
-<!-- ══ FOOTER ══ -->
-<footer style="padding:34px 80px;background:var(--ink);display:flex;align-items:center;justify-content:space-between;">
-  <span style="font-weight:800;font-size:16px;color:#fff;">Plusra</span>
-  <span style="font-family:var(--mono);font-size:11px;color:rgba(255,255,255,0.5);">運営：どんバズくん チーム · Meta公式API認定</span>
-</footer>
-
-<script>
-function toggleFaq(btn) {
-  const item = btn.closest('.faq-item');
-  const isOpen = item.classList.contains('is-open');
-  document.querySelectorAll('.faq-item').forEach(el => {
-    el.classList.remove('is-open');
-    el.querySelector('.faq-toggle').textContent = '+';
-  });
-  if (!isOpen) {
-    item.classList.add('is-open');
-    btn.querySelector('.faq-toggle').textContent = '−';
-  }
+function Spec({ children, accent, style }) {
+  return (
+    <span style={{
+      fontFamily: WF.mono, fontSize: 10.5, letterSpacing: 0.2, lineHeight: 1.3,
+      padding: '3px 6px', borderRadius: 4, whiteSpace: 'nowrap',
+      color: accent ? WF.accent : WF.ink3,
+      background: accent ? WF.accentSoft : WF.panel2,
+      border: `1px solid ${accent ? WF.accentLine : WF.line}`,
+      ...style,
+    }}>{children}</span>
+  );
 }
+
+function Eyebrow({ children, style }) {
+  return (
+    <div style={{
+      fontFamily: WF.mono, fontSize: 11, letterSpacing: 2, textTransform: 'uppercase',
+      fontWeight: 600, color: WF.accent, ...style,
+    }}>{children}</div>
+  );
+}
+
+function Line({ w = '100%', h = 9, c, style }) {
+  return <div style={{ width: w, height: h, borderRadius: h / 2, background: c || WF.line, ...style }} />;
+}
+
+function Lines({ n = 3, w = ['100%','94%','72%'], gap = 9, h = 8, c, style }) {
+  return (
+    <div style={{ display: 'flex', flexDirection: 'column', gap, ...style }}>
+      {Array.from({ length: n }).map((_, i) => (
+        <Line key={i} w={Array.isArray(w) ? (w[i] ?? w[w.length-1]) : w} h={h} c={c} />
+      ))}
+    </div>
+  );
+}
+
+function Box({ children, style, pad = 0, fill = true }) {
+  return (
+    <div style={{
+      border: `1px solid ${WF.line}`, borderRadius: 14,
+      background: fill ? WF.card : 'transparent', padding: pad,
+      boxShadow: fill ? '0 1px 2px rgba(15,23,42,0.04)' : 'none',
+      ...style,
+    }}>{children}</div>
+  );
+}
+
+function Img({ label = 'image', h = 160, w = '100%', radius = 12, style }) {
+  return (
+    <div style={{
+      width: w, height: h, borderRadius: radius, position: 'relative', overflow: 'hidden',
+      border: `1px dashed ${WF.line2}`,
+      background: `repeating-linear-gradient(135deg, #EFF3F8 0 10px, #F8FAFC 10px 20px)`,
+      display: 'flex', alignItems: 'center', justifyContent: 'center', ...style,
+    }}>
+      <span style={{
+        fontFamily: WF.mono, fontSize: 11, color: WF.ink3, letterSpacing: 0.3,
+        padding: '4px 9px', border: `1px solid ${WF.line}`, borderRadius: 6,
+        background: WF.card, textAlign: 'center',
+      }}>{label}</span>
+    </div>
+  );
+}
+
+function Btn({ children, solid, w, sub, style }) {
+  return (
+    <div style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: 7 }}>
+      <div style={{
+        display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8,
+        height: 48, width: w, padding: '0 28px', borderRadius: 999,
+        fontFamily: WF.sans, fontSize: 15, fontWeight: 700, letterSpacing: 0.2,
+        color: solid ? '#FFFFFF' : WF.accent,
+        background: solid ? WF.grad : WF.card,
+        border: solid ? 'none' : `1.5px solid ${WF.accentLine}`,
+        boxShadow: solid ? '0 6px 18px rgba(25,97,213,0.28)' : 'none',
+        ...style,
+      }}>{children}</div>
+      {sub && <span style={{ fontFamily: WF.sans, fontSize: 11.5, color: WF.ink3 }}>{sub}</span>}
+    </div>
+  );
+}
+
+function Pill({ children, accent, tone, style }) {
+  const map = {
+    ok:     [WF.okSoft, '#137A51', '#8BE6C1'],
+    warn:   [WF.warnSoft, '#A34A0B', '#FDBA8C'],
+    danger: [WF.dangerSoft, '#A62626', '#FCA5A5'],
+  };
+  const [bg, fg, bd] = tone ? map[tone]
+    : accent ? [WF.accentSoft, WF.accent, WF.accentLine]
+    : [WF.panel2, WF.ink2, WF.line];
+  return (
+    <span style={{
+      display: 'inline-flex', alignItems: 'center', gap: 6,
+      fontFamily: WF.sans, fontSize: 12, fontWeight: 600, lineHeight: 1,
+      padding: '6px 12px', borderRadius: 999,
+      color: fg, background: bg, border: `1px solid ${bd}`, ...style,
+    }}>{children}</span>
+  );
+}
+
+function Check({ c, size = 14 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 14 14" fill="none" stroke={c || WF.accent} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M2 7.5L5.5 11L12 3.5" />
+    </svg>
+  );
+}
+
+function Cross({ c, size = 13 }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 13 13" fill="none" stroke={c || WF.ink4} strokeWidth="1.8" strokeLinecap="round">
+      <path d="M3 3l7 7M10 3l-7 7" />
+    </svg>
+  );
+}
+
+function Avatar({ size = 36 }) {
+  return <div style={{ width: size, height: size, borderRadius: '50%', background: WF.panel2, border: `1px solid ${WF.line}`, flexShrink: 0 }} />;
+}
+
+function Browser({ children, label, style }) {
+  return (
+    <div style={{ width: '100%', height: '100%', background: WF.card, display: 'flex', flexDirection: 'column', fontFamily: WF.sans, ...style }}>
+      <div style={{ height: 38, flexShrink: 0, display: 'flex', alignItems: 'center', gap: 14, padding: '0 16px', borderBottom: `1px solid ${WF.line}`, background: WF.card2 }}>
+        <div style={{ display: 'flex', gap: 7 }}>
+          {['#E2E8F0','#E2E8F0','#E2E8F0'].map((c,i)=><div key={i} style={{ width: 11, height: 11, borderRadius: '50%', background: c }} />)}
+        </div>
+        <div style={{ flex: 1, maxWidth: 360, height: 22, borderRadius: 6, background: WF.card, border: `1px solid ${WF.line}`, display: 'flex', alignItems: 'center', padding: '0 10px' }}>
+          <span style={{ fontFamily: WF.mono, fontSize: 11, color: WF.ink3 }}>{label || 'plusra.app'}</span>
+        </div>
+      </div>
+      <div style={{ flex: 1, overflow: 'hidden' }}>{children}</div>
+    </div>
+  );
+}
+
+function Logo({ height = 30, color = WF.ink, symbolColor, textColor, gap, gradient, gradientSymbol }) {
+  const gid = React.useId().replace(/:/g, '');
+  const sFill = (gradient || gradientSymbol) ? `url(#${gid}-s)` : (symbolColor || color);
+  const tFill = gradient ? `url(#${gid}-t)` : (textColor || color);
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: gap != null ? gap : height * 0.42 }}>
+      <svg viewBox="0 0 403.65 328.83" style={{ height, display: 'block' }} fill={sFill}>
+        <defs><linearGradient id={`${gid}-s`} x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#1961D5" /><stop offset="1" stopColor="#56B8E8" /></linearGradient></defs>
+        <path d="M206.89,157.57l-97.6,156.32c-3.27,5.72-16.28,14.94-22.68,14.94H0l98.02-153.74c4.22-6.62,10.15-12.05,17.29-15.32,2.91-1.34,5.74-2.2,7.94-2.2h83.65Z"></path>
+        <path d="M282.67,250.67c-32.52,1.67-66.87-.94-99.53-.54l37.59-59.43c14.98-20.88,38.22-12.53,59.9-14.34,50.75-5.75,60.23-67.62,24.92-92.26-8.42-5.87-18.59-8.7-28.85-8.7H45.54c2.29-9.81,6.09-19.11,11.13-27.61C74.33,18.02,106.95.34,141.57.27l148.06-.27c50.01,2.12,94.2,39.58,108.33,86.77,24.19,80.55-31.57,159.58-115.3,163.9Z"></path>
+        <path d="M188.2,250.1c-1.69,0-3.38.01-5.06.04l37.59-59.43c14.98-20.88,38.22-12.53,59.9-14.34,26.65-3.02,41.92-21.52,45.29-41.97l.27-1.63c-14.64,105.84-114.24,116.63-137.99,117.33Z"></path>
+      </svg>
+      <svg viewBox="0 0 808.42 206.12" style={{ height: height * 0.64, display: 'block' }} fill={tFill}>
+        <defs><linearGradient id={`${gid}-t`} x1="0" y1="0" x2="1" y2="1"><stop offset="0" stopColor="#1961D5" /><stop offset="1" stopColor="#56B8E8" /></linearGradient></defs>
+        <path d="M24.28,2.68c.19-1.53,1.49-2.68,3.03-2.68h38.29c17.81,0,31.38,2.97,40.73,8.9,7.68,4.8,13.7,11.57,18.07,20.3,4.36,8.99,6.55,18.46,6.55,28.42,0,14.49-4.06,27.24-12.18,38.24-12.05,16.33-31.03,24.49-56.96,24.49h-19.43c-1.54,0-2.85,1.15-3.03,2.68l-9.42,76.48c-.19,1.53-1.49,2.68-3.03,2.68H3.06c-1.84,0-3.26-1.61-3.03-3.43L24.28,2.68ZM50.73,30.57l-7.36,59.75c-.22,1.82,1.2,3.43,3.03,3.43h16.05c12.31,0,21.76-3.16,28.35-9.49,6.59-6.33,9.89-15.47,9.89-27.43,0-19.29-12.31-28.94-36.93-28.94h-10c-1.54,0-2.85,1.15-3.03,2.68Z"></path>
+        <path d="M216.62,5.83l-23.31,193.66c-.18,1.54-1.49,2.69-3.03,2.69h-22.78c-1.83,0-3.25-1.6-3.03-3.42L187.9,5.1c.19-1.53,1.49-2.69,3.03-2.69h22.65c1.83,0,3.25,1.6,3.03,3.42Z"></path>
+        <path d="M370.99,78.83c1.84,0,3.26,1.61,3.03,3.43l-8.35,68.33c-.7,6.11-1.57,11.44-2.62,15.98-1.05,4.54-2.18,8.34-3.4,11.39-2.44,5.85-6.55,11.04-12.31,15.58-9.78,7.68-22.66,11.52-38.63,11.52s-27.33-3.88-36.41-11.65c-9.08-7.86-13.62-18.38-13.62-31.56,0-2.01.11-4.37.33-7.07.22-2.7.54-5.8.98-9.3l7.79-63.97c.19-1.53,1.49-2.69,3.03-2.69h22.78c1.84,0,3.26,1.61,3.03,3.43l-8.09,65.84c-.35,2.97-.61,5.57-.79,7.79-.18,2.23-.26,4.08-.26,5.56,0,13.01,7.64,19.51,22.92,19.51,8.29,0,14.4-2.14,18.33-6.42,3.93-4.28,6.55-11.79,7.86-22.52l8.7-70.52c.19-1.53,1.49-2.68,3.03-2.68h22.65Z"></path>
+        <path d="M505.95,94.66l-12.16,12.16c-1.13,1.13-2.92,1.17-4.15.15-6.86-5.66-13.26-8.49-19.19-8.49-4.45,0-8.14,1.24-11.06,3.73-2.93,2.49-4.39,5.57-4.39,9.23s1.22,6.59,3.67,9.04c2.44,2.53,7.55,5.94,15.32,10.21,11.09,6.2,18.51,11.87,22.26,17.02,4.01,5.06,6.02,11.66,6.02,19.77,0,11.7-4.06,21.08-12.18,28.15-8.3,6.98-19.08,10.48-32.35,10.48-17.11,0-31.43-7.31-42.98-21.94-1.08-1.37-.74-3.38.69-4.37l14.12-9.84c1.28-.89,3-.65,4.05.51,7.25,7.96,14.94,11.94,23.08,11.94,4.98,0,8.97-1.31,11.98-3.93s4.52-6.02,4.52-10.21c0-3.67-1.27-6.63-3.8-8.9-1.22-1.13-3.36-2.71-6.42-4.72-3.06-2.01-7.2-4.41-12.44-7.2-9.25-5.15-15.67-10.17-19.25-15.06-3.58-5.15-5.37-11.44-5.37-18.86,0-11.17,4.1-20.43,12.31-27.76s18.64-11,31.3-11,25.21,5.17,36.38,15.51c1.26,1.16,1.26,3.17.05,4.38Z"></path>
+        <path d="M593.36,82.07h0c-.31,2.53,2.58,4.2,4.6,2.65,7.97-6.11,16-9.17,24.09-9.17s15.1,2.59,21.69,7.76c1.23.96,1.39,2.77.44,4l-14.97,19.32c-.94,1.21-2.69,1.51-3.93.6-4.61-3.4-9.22-5.1-13.83-5.1-3.67,0-6.9.72-9.69,2.16-2.8,1.44-5.22,3.71-7.27,6.81-2.05,3.1-3.76,7.09-5.11,11.98-1.36,4.89-2.42,10.74-3.21,17.55l-7.28,59.01c-.18,1.45-1.41,2.54-2.87,2.54h-23.12c-1.74,0-3.08-1.52-2.87-3.24l14.48-117.58c.18-1.45,1.41-2.54,2.87-2.54h23.12c1.74,0,3.08,1.52,2.87,3.24Z"></path>
+        <path d="M808.4,82.26l-14.44,117.24c-.19,1.53-1.49,2.68-3.03,2.68h-22.77c-1.84,0-3.27-1.62-3.03-3.44l.31-2.43c.34-2.69-2.69-4.41-4.88-2.81-10.58,7.71-21.47,11.57-32.67,11.57-16.33,0-29.64-5.54-39.94-16.63-10.3-11.09-15.45-25.45-15.45-43.08,0-20.34,5.89-37.01,17.68-50.02,11.96-13.01,27.28-19.51,45.96-19.51,8.82,0,16.32,1.44,22.52,4.32,4.87,2.23,9.82,5.72,14.85,10.47,1.84,1.73,4.86.69,5.16-1.81l.88-7.28c.19-1.54,1.49-2.69,3.03-2.69h22.78c1.84,0,3.26,1.61,3.03,3.43ZM773.59,136.97c0-10.91-3.14-19.77-9.43-26.58-6.29-6.9-14.4-10.35-24.36-10.35-10.83,0-19.9,4.24-27.24,12.7-7.33,8.56-11,19.03-11,31.43,0,10.83,3.05,19.69,9.17,26.58,6.11,6.9,13.97,10.34,23.57,10.34,10.65,0,19.86-4.32,27.63-12.96,7.77-8.82,11.65-19.2,11.65-31.17Z"></path>
+      </svg>
+    </div>
+  );
+}
+
+function NavBar({ compact }) {
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: compact ? '0 20px' : '0 40px', height: 54, borderBottom: `1px solid ${WF.line}`, background: 'linear-gradient(180deg, #FFFFFF 0%, #F9FAFB 100%)' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: 9 }}>
+        <div style={{ width: 26, height: 26, borderRadius: 8, background: WF.grad }} />
+        <span style={{ fontFamily: WF.sans, fontWeight: 800, fontSize: 13, color: WF.ink }}>Plusra</span>
+      </div>
+      {!compact && (
+        <div style={{ display: 'flex', gap: 28, marginLeft: 'auto', marginRight: 24 }}>
+          {['導入事例','お役立ち資料','サポート','お問い合わせ'].map(t => <span key={t} style={{ fontFamily: WF.sans, fontSize: 12, fontWeight: 500, letterSpacing: 0.2, color: WF.ink2 }}>{t}</span>)}
+        </div>
+      )}
+      <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+        <div style={{ height: 34, padding: '0 16px', borderRadius: 6, background: WF.grad, color: '#fff', fontFamily: WF.sans, fontWeight: 700, fontSize: 12, display: 'flex', alignItems: 'center', boxShadow: '0 2px 8px rgba(25,97,213,0.20)' }}>法人向け製品資料</div>
+      </div>
+    </div>
+  );
+}
+
+function Phone({ children, w = 330, label, style }) {
+  return (
+    <div style={{ width: w, borderRadius: 34, padding: 9, background: '#0F172A', boxShadow: '0 12px 40px rgba(15,23,42,0.22)', ...style }}>
+      <div style={{ borderRadius: 26, overflow: 'hidden', background: WF.card, position: 'relative' }}>
+        <div style={{ height: 34, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 20px', position: 'relative' }}>
+          <span style={{ fontFamily: WF.sans, fontSize: 11, fontWeight: 600, color: WF.ink2 }}>9:41</span>
+          <div style={{ position: 'absolute', left: '50%', top: 9, transform: 'translateX(-50%)', width: 64, height: 18, borderRadius: 999, background: '#0F172A' }} />
+          <div style={{ display: 'flex', gap: 4, alignItems: 'center' }}>
+            <div style={{ width: 16, height: 9, borderRadius: 2, border: `1px solid ${WF.ink4}` }} />
+          </div>
+        </div>
+        {children}
+      </div>
+    </div>
+  );
+}
+
+function MacBook({ children, w = 980, h = 680, style }) {
+  return (
+    <div style={{ position: 'relative', ...style }}>
+      <div style={{
+        width: w,
+        borderRadius: '20px 20px 16px 16px',
+        padding: '14px 12px 16px 12px',
+        background: '#1a1a1a',
+        boxShadow: '0 30px 60px rgba(0,0,0,0.3), 0 0 0 1px rgba(0,0,0,0.1)',
+      }}>
+        <div style={{
+          width: '100%',
+          height: h,
+          borderRadius: '12px',
+          overflow: 'hidden',
+          background: WF.card,
+          border: '1px solid rgba(0,0,0,0.05)',
+        }}>
+          {children}
+        </div>
+      </div>
+      <div style={{
+        position: 'absolute',
+        bottom: 0,
+        left: '50%',
+        transform: 'translateX(-50%)',
+        width: '28%',
+        height: 12,
+        background: '#1a1a1a',
+        borderRadius: '0 0 16px 16px',
+        zIndex: 1,
+      }} />
+    </div>
+  );
+}
+
+function BlockTab({ n, title, intent }) {
+  return (
+    <div style={{ display: 'flex', alignItems: 'baseline', gap: 10, marginBottom: 4 }}>
+      <span style={{ fontFamily: WF.mono, fontSize: 12, color: WF.accent, fontWeight: 600 }}>{n}</span>
+      <span style={{ fontFamily: WF.sans, fontSize: 13, fontWeight: 700, color: WF.ink2, letterSpacing: 0.3 }}>{title}</span>
+      {intent && <span style={{ fontFamily: WF.sans, fontSize: 11, color: WF.ink3 }}>— {intent}</span>}
+    </div>
+  );
+}
+
+function Rule({ style }) { return <div style={{ height: 1, background: WF.line, width: '100%', ...style }} />; }
+
+function EnLabel({ children, num, color, size = 38, style }) {
+  return (
+    <div style={{ display: 'flex', alignItems: 'baseline', gap: 12, ...style }}>
+      <span style={{ fontFamily: WF.sans, fontWeight: 300, fontSize: size, letterSpacing: 1, color: color || WF.ink4, lineHeight: 1 }}>{children}</span>
+      {num && <span style={{ fontFamily: WF.mono, fontSize: 12, color: WF.accent, fontWeight: 600 }}>{num}</span>}
+    </div>
+  );
+}
+
+function CircleArrow({ size = 44, solid, style }) {
+  return (
+    <div style={{
+      width: size, height: size, borderRadius: '50%', flexShrink: 0,
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      background: solid ? WF.grad : WF.card,
+      border: solid ? 'none' : `1px solid ${WF.line2}`,
+      boxShadow: solid ? '0 6px 16px rgba(25,97,213,0.28)' : '0 1px 3px rgba(15,23,42,0.06)',
+      ...style,
+    }}>
+      <svg width={size*0.4} height={size*0.4} viewBox="0 0 16 16" fill="none" stroke={solid ? '#fff' : WF.accent} strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M3 8h9M8 4l4 4-4 4" />
+      </svg>
+    </div>
+  );
+}
+
+function Geo({ kind = 'diamond', size = 96, style }) {
+  const base = { width: size, height: size, flexShrink: 0, ...style };
+  if (kind === 'sphere') {
+    return <div style={{ ...base, borderRadius: '50%', background: 'radial-gradient(120% 120% at 30% 25%, #9FD0F5 0%, #3E86E0 45%, #1961D5 100%)', boxShadow: '0 16px 40px rgba(25,97,213,0.30), inset 0 2px 8px rgba(255,255,255,0.45)' }} />;
+  }
+  if (kind === 'diamond') {
+    return <div style={{ ...base, borderRadius: size*0.16, transform: 'rotate(45deg)', background: WF.grad, boxShadow: '0 18px 44px rgba(25,97,213,0.28), inset 0 2px 10px rgba(255,255,255,0.5)' }} />;
+  }
+  return <div style={{ ...base, borderRadius: '50%', background: 'conic-gradient(from 200deg, #56B8E8, #1961D5, #56B8E8)', WebkitMask: `radial-gradient(circle, transparent ${size*0.3}px, #000 ${size*0.31}px)`, mask: `radial-gradient(circle, transparent ${size*0.3}px, #000 ${size*0.31}px)`, boxShadow: '0 14px 36px rgba(25,97,213,0.2)' }} />;
+}
+
+function PanelStack({ w = 300, h = 200, label, style }) {
+  return (
+    <div style={{ position: 'relative', width: w, height: h, ...style }}>
+      {[2,1,0].map(i => (
+        <div key={i} style={{
+          position: 'absolute', inset: 0, transform: `translate(${i*16}px, ${i*-14}px)`,
+          borderRadius: 16, background: i === 0 ? WF.card : `linear-gradient(135deg, rgba(86,184,232,${0.22-i*0.06}), rgba(25,97,213,${0.16-i*0.04}))`,
+          border: `1px solid ${i===0 ? WF.line : 'rgba(141,184,255,0.5)'}`,
+          boxShadow: '0 18px 50px rgba(25,97,213,0.18)',
+          backdropFilter: 'blur(4px)',
+        }}>
+          {i === 0 && (
+            <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <span style={{ fontFamily: WF.mono, fontSize: 11, color: WF.ink3, padding: '4px 9px', border: `1px solid ${WF.line}`, borderRadius: 6, background: WF.card2 }}>{label || 'product UI'}</span>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}
+
+Object.assign(window, { WF, Spec, Eyebrow, Line, Lines, Box, Img, Btn, Pill, Check, Cross, Avatar, Browser, Logo, NavBar, Phone, MacBook, BlockTab, Rule, EnLabel, CircleArrow, Geo, PanelStack });
+})();
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// lp-full.jsx — Full LP wireframe (PC)
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+(function () {
+const { WF, Spec, Eyebrow, Line, Lines, Box, Img, Btn, Pill, Check, Cross, Avatar, NavBar, Phone, Rule, EnLabel, CircleArrow, Geo, PanelStack } = window;
+
+// 比較表のデータ（ダミー）
+const CMP_ROWS = [
+  { k: '月額費用', p: { big: '¥0', ok: true }, a: { big: '¥9,800', dim: true }, b: { big: '¥15,000', dim: true } },
+  { k: '初期費用', p: { big: '¥0', ok: true }, a: { big: '¥50,000', dim: true }, b: { big: '¥100,000', dim: true } },
+  { k: '配信数制限', p: { ok: true }, a: { ok: false }, b: { ok: false } },
+  { k: 'API制限', p: { ok: true }, a: { ok: false }, b: { ok: false } },
+];
+
+function Block({ n, title, intent, children, bg, en, pad = '76px 80px', max = 1000 }) {
+  return (
+    <div style={{ background: bg || WF.card, padding: pad, position: 'relative' }}>
+      <div style={{ maxWidth: max, margin: '0 auto', position: 'relative' }}>{children}</div>
+    </div>
+  );
+}
+
+function SectionHead({ en, num, jp, size = 30, spec, sub }) {
+  return (
+    <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, marginBottom: 40 }}>
+      {en && <EnLabel num={num} style={{ justifyContent: 'center' }}>{en}</EnLabel>}
+      <h2 style={{ margin: 0, fontFamily: WF.sans, fontWeight: 800, fontSize: size, lineHeight: 1.25, letterSpacing: -0.6, color: WF.ink }}>{jp}</h2>
+      {sub && <p style={{ margin: '4px 0 0', fontFamily: WF.sans, fontSize: 14, color: WF.ink3 }}>{sub}</p>}
+    </div>
+  );
+}
+
+function Bubble({ text, align }) {
+  return (
+    <div style={{ display: 'flex', gap: 12, alignItems: 'flex-end', flexDirection: align === 'right' ? 'row-reverse' : 'row', maxWidth: 470, alignSelf: align === 'right' ? 'flex-end' : 'flex-start' }}>
+      <Avatar size={44} />
+      <div style={{ position: 'relative', background: WF.card, border: `1px solid ${WF.line}`, borderRadius: 18, padding: '16px 20px', boxShadow: '0 4px 14px rgba(15,23,42,0.05)' }}>
+        <span style={{ fontFamily: WF.sans, fontSize: 15, color: WF.ink, lineHeight: 1.6 }}>{text}</span>
+      </div>
+    </div>
+  );
+}
+
+function Header() {
+  const [scrolled, setScrolled] = React.useState(false);
+  React.useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      setScrolled(y > 40);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true, capture: true });
+    document.addEventListener('scroll', onScroll, { passive: true, capture: true });
+    return () => {
+      window.removeEventListener('scroll', onScroll, { capture: true });
+      document.removeEventListener('scroll', onScroll, { capture: true });
+    };
+  }, []);
+  return (
+    <div style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 48px', height: 72, background: scrolled ? 'rgba(255,255,255,0.1)' : 'transparent', backdropFilter: scrolled ? 'blur(18px) saturate(1.5)' : 'none', WebkitBackdropFilter: scrolled ? 'blur(18px) saturate(1.5)' : 'none', borderBottom: '1px solid ' + (scrolled ? 'rgba(15,23,42,0.08)' : 'rgba(255,255,255,0.3)'), boxShadow: scrolled ? '0 4px 20px rgba(15,23,42,0.06)' : 'none', transition: 'background 220ms ease, border-color 220ms ease, box-shadow 220ms ease' }}>
+      {scrolled ? <Logo height={32} gradientSymbol textColor={WF.ink} /> : <Logo height={32} symbolColor="#fff" textColor="#fff" />}
+      <div style={{ display: 'flex', alignItems: 'center', gap: 30 }}>
+        {['機能','比較','料金','よくある質問'].map(t => <span key={t} style={{ fontFamily: WF.sans, fontSize: 14, fontWeight: 500, color: scrolled ? WF.ink2 : '#fff' }}>{t}</span>)}
+        <div style={{ height: 40, padding: '0 20px', borderRadius: 999, background: scrolled ? WF.grad : 'transparent', color: '#fff', fontFamily: WF.sans, fontWeight: 700, fontSize: 13, display: 'flex', alignItems: 'center', border: scrolled ? 'none' : '1px solid #fff', boxShadow: scrolled ? '0 6px 18px rgba(25,97,213,0.28)' : 'none' }}>無料で始める</div>
+      </div>
+    </div>
+  );
+}
+
+function FullLP() {
+  return (
+    <>
+      <Header />
+      <div style={{ width: '100%', minHeight: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden', background: 'linear-gradient(135deg, #0A1E5C 0%, #0E2E86 30%, #1A4DC0 62%, #2E6FE6 100%)', fontFamily: WF.sans }}>
+        <div style={{ position: 'relative', flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'flex-start', overflow: 'hidden', padding: '72px 0 0 100px', minHeight: 680 }}>
+          <div style={{ position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none' }}>
+            <div style={{ position: 'absolute', top: '-10%', left: '-8%', width: 620, height: 620, borderRadius: '50%', background: 'radial-gradient(circle, rgba(86,184,232,0.32), transparent 62%)', filter: 'blur(30px)' }} />
+            <div style={{ position: 'absolute', top: '38%', right: '24%', width: 720, height: 720, borderRadius: '50%', background: 'radial-gradient(circle, rgba(46,111,230,0.30), transparent 66%)', filter: 'blur(40px)' }} />
+            <div style={{ position: 'absolute', bottom: '-26%', left: '20%', width: 560, height: 560, borderRadius: '50%', background: 'radial-gradient(circle, rgba(126,194,255,0.22), transparent 64%)', filter: 'blur(36px)' }} />
+            <div style={{ position: 'absolute', inset: 0, background: 'conic-gradient(from 210deg at 78% 18%, rgba(126,194,255,0.10), transparent 26%, transparent 74%, rgba(46,111,230,0.12))', mixBlendMode: 'screen' }} />
+            <div style={{ position: 'absolute', inset: 0, backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)', backgroundSize: '56px 56px', WebkitMaskImage: 'radial-gradient(120% 90% at 70% 10%, rgba(0,0,0,0.6), transparent 70%)', maskImage: 'radial-gradient(120% 90% at 70% 10%, rgba(0,0,0,0.6), transparent 70%)' }} />
+            <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.10) 1px, transparent 1px)', backgroundSize: '30px 30px', WebkitMaskImage: 'linear-gradient(180deg, rgba(0,0,0,0.45), transparent 60%)', maskImage: 'linear-gradient(180deg, rgba(0,0,0,0.45), transparent 60%)' }} />
+            <div style={{ position: 'absolute', inset: 0, opacity: 0.12, mixBlendMode: 'overlay', backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")" }} />
+          </div>
+          <div style={{ position: 'relative', zIndex: 2, maxWidth: 580, flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: WF.sans, fontSize: 12.5, fontWeight: 600, color: 'rgba(255,255,255,0.9)', padding: '7px 14px', borderRadius: 999, background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.2)', marginBottom: 24 }}>自動返信をもっと使いやすく</span>
+            <h1 style={{ margin: 0, fontFamily: WF.sans, fontWeight: 800, fontSize: 62, lineHeight: 1.25, letterSpacing: -1.4, color: '#fff', whiteSpace: 'nowrap' }}>迷わず使えて、<br/>ちゃんと売上に変わる。</h1>
+            <p style={{ margin: '22px 0 0', fontFamily: WF.sans, fontSize: 18, color: 'rgba(255,255,255,0.82)', lineHeight: 1.95, maxWidth: 520 }}>毎月高い固定費を払っているのに<br/>自動返信を「使いこなせていない」あなたへ<br/>複雑な設定も、毎月の課金ももういりません。</p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: 11, margin: '26px 0 0' }}>
+              {['初期費用・月額ずっと ¥0','Meta公式API利用で安心'].map(t=>(
+                <div key={t} style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <div style={{ width: 22, height: 22, borderRadius: '50%', background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <Check c={WF.accent} size={13} />
+                  </div>
+                  <span style={{ fontFamily: WF.sans, fontSize: 17, fontWeight: 700, color: '#fff' }}>{t}</span>
+                </div>
+              ))}
+            </div>
+            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 14, margin: '30px 0 14px' }}>
+              <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', height: 70, padding: '0 56px', borderRadius: 999, background: '#fff', color: WF.accent, fontFamily: WF.sans, fontSize: 20, fontWeight: 700, boxShadow: '0 16px 36px rgba(0,0,0,0.30)', minWidth: 260 }}>無料で始める</div>
+              <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 10, width: 260 }}>
+                <span style={{ fontFamily: WF.sans, fontSize: 15, fontWeight: 700, color: '#fff', textDecoration: 'underline', textUnderlineOffset: 5 }}>機能を見る</span>
+                <div style={{ width: 26, height: 26, borderRadius: '50%', border: '1.5px solid rgba(255,255,255,0.6)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                  <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8h9M8 4l4 4-4 4" /></svg>
+                </div>
+              </div>
+            </div>
+            <span style={{ fontFamily: WF.sans, fontSize: 12, color: 'rgba(255,255,255,0.6)' }}>登録は1分・クレジットカード不要</span>
+          </div>
+
+          <div style={{ position: 'absolute', right: '-24%', top: '50%', transform: 'translateY(-52%) translateY(60px)', width: 'min(1520px, calc(100vw - 360px))', zIndex: 1, pointerEvents: 'none' }}>
+            <div style={{ position: 'relative', width: '100%' }}>
+              <img src="MacBook.png" alt="Plusra プロダクト画面" style={{ width: '100%', display: 'block', filter: 'drop-shadow(0 40px 80px rgba(0,0,0,0.45))' }} />
+              <div style={{ position: 'absolute', left: '11.33%', top: '5.42%', width: '77.27%', height: '82.82%', overflow: 'hidden', background: 'repeating-linear-gradient(135deg, #EFF3F8 0 12px, #F8FAFC 12px 24px)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <span style={{ position: 'absolute', bottom: 16, fontFamily: WF.mono, fontSize: 12, color: WF.ink3, padding: '5px 12px', border: '1px solid ' + WF.line, borderRadius: 6, background: WF.card }}>サービス画面（動画）</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <Block n="02" title="問題提起" intent="そうそうそれ！で言語化" bg={WF.card}>
+        <div style={{ textAlign: 'center', marginBottom: 48 }}>
+          <div style={{ display: 'inline-flex', flexDirection: 'column', alignItems: 'center', gap: 9, marginBottom: 16 }}>
+            <span style={{ fontFamily: WF.sans, fontSize: 14, fontWeight: 700, letterSpacing: 1, color: WF.accent }}>乗り換えを検討中のあなたへ</span>
+            <div style={{ width: 52, height: 3, borderRadius: 2, background: WF.accent }} />
+          </div>
+          <h2 style={{ margin: 0, fontFamily: WF.sans, fontWeight: 800, fontSize: 34, letterSpacing: -0.8, color: WF.ink }}>こんな悩みありませんか？</h2>
+        </div>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 26 }}>
+          {[
+            '機能が多すぎて、\n同じ設定しか\n使えていない…。',
+            'ちょっと凝った返信は、\nめちゃめちゃ\n組みづらい…。',
+            '毎月1〜2万円の\n固定費が\n地味に痛い…。',
+          ].map((t,i)=>(
+            <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+              <div style={{ position: 'relative', width: '100%', background: '#EEF1F5', borderRadius: 18, padding: '30px 22px', minHeight: 142, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                <span style={{ fontFamily: WF.sans, fontSize: 15, fontWeight: 700, color: WF.ink2, lineHeight: 1.95, textAlign: 'center', whiteSpace: 'pre-line' }}>{t}</span>
+                <div style={{ position: 'absolute', bottom: -10, left: '50%', transform: 'translateX(-50%)', width: 0, height: 0, borderLeft: '11px solid transparent', borderRight: '11px solid transparent', borderTop: '11px solid #EEF1F5' }} />
+              </div>
+              <div style={{ marginTop: 26 }}>
+                <Img label="人物イラスト" w={156} h={156} radius={18} />
+              </div>
+            </div>
+          ))}
+        </div>
+      </Block>
+
+      <Block n="03" title="共感" intent="あなたのせいじゃない" bg={WF.washTop}>
+        <div style={{ maxWidth: 720, margin: '0 auto', textAlign: 'center' }}>
+          <h2 style={{ margin: 0, fontFamily: WF.sans, fontWeight: 800, fontSize: 28, lineHeight: 1.4, letterSpacing: -0.6, color: WF.ink }}>使いこなせていないのは、<br/>あなたのせいじゃありません。</h2>
+          <p style={{ margin: '24px auto 0', maxWidth: 560, fontFamily: WF.sans, fontSize: 15.5, color: WF.ink2, lineHeight: 2 }}>機能がどれだけあっても、使いにくければ売上には変わらない。大切なのは「機能の数」じゃなく、<strong style={{ color: WF.accent, fontWeight: 700 }}>「迷わず使えること」</strong>。</p>
+        </div>
+      </Block>
+
+      <div style={{ background: WF.gradDeep, padding: '84px 80px', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 20, position: 'relative' }}>
+          <span style={{ fontFamily: WF.sans, fontSize: 15, color: 'rgba(255,255,255,0.8)' }}>その理想、私たちが形にしました。</span>
+          <Logo height={78} color="#fff" />
+          <p style={{ margin: 0, fontFamily: WF.sans, fontSize: 17, color: 'rgba(255,255,255,0.92)' }}>Instagramのためだけに、ゼロから作った自動返信ツール。</p>
+        </div>
+      </div>
+
+      <Block n="05" title="3つのベネフィット" intent="便益" bg={WF.card}>
+        <SectionHead jp="迷わず使えて、ちゃんと売上に変わる。しかも、ずっと0円。" />
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 22 }}>
+          {[
+            ['迷わず使える','複雑な設定はゼロ。独自のキャンバス形式で、パズルをつなぐように直感的に組める。'],
+            ['ちゃんと売上に変わる','コメント・DM・ストーリーズ・ライブ。売上の入り口をすべてカバーし24時間稼働。'],
+            ['ずっと0円','毎月1〜2万円の固定費はもう不要。ずっと無料でビジネスを支えます。'],
+          ].map(([t,b],i)=>(
+            <Box key={i} pad={26} style={{ display: 'flex', flexDirection: 'column', gap: 14, borderRadius: 18 }}>
+              <span style={{ fontFamily: WF.sans, fontWeight: 700, fontSize: 17, color: WF.ink }}>{t}</span>
+              <span style={{ fontFamily: WF.sans, fontSize: 13.5, color: WF.ink2, lineHeight: 1.8 }}>{b}</span>
+              <Img label="補助UI" h={88} radius={10} style={{ marginTop: 2 }} />
+            </Box>
+          ))}
+        </div>
+        <div style={{ textAlign: 'center', marginTop: 34 }}><Btn solid sub="登録は1分・クレジットカード不要">無料で始める →</Btn></div>
+      </Block>
+
+      <Block n="06" title="機能紹介" intent="UIスクショ主役" bg={WF.washTop}>
+        <SectionHead jp="Plusra でできること" />
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 30 }}>
+          {[
+            ['01','全トリガー対応','コメント・DM・ストーリーズのメンション/リアクション・ライブまで網羅。'],
+            ['02','表現力豊かなメッセージ','テキストだけでなく独自ボタン・カルーセル・画像/動画を自由に組み合わせ。'],
+            ['03','独自のキャンバスUI','フローを1つのキャンバスに並べてつなぐだけ。実機プレビューで見ながら組める。'],
+          ].map(([num,t,b],i)=>(
+            <Box key={i} pad={0} style={{ display: 'grid', gridTemplateColumns: i%2 ? '1.1fr 0.9fr' : '0.9fr 1.1fr', gap: 0, overflow: 'hidden', borderRadius: 18, alignItems: 'stretch' }}>
+              <div style={{ order: i%2 ? 2 : 1, padding: 14 }}><Img label={`機能${num}`} h={200} radius={12} /></div>
+              <div style={{ order: i%2 ? 1 : 2, display: 'flex', flexDirection: 'column', gap: 12, justifyContent: 'center', padding: '14px 30px' }}>
+                <span style={{ fontFamily: WF.mono, fontSize: 13, color: WF.accent, fontWeight: 600 }}>{num}</span>
+                <span style={{ fontFamily: WF.sans, fontWeight: 700, fontSize: 21, color: WF.ink, letterSpacing: -0.3 }}>{t}</span>
+                <span style={{ fontFamily: WF.sans, fontSize: 14, color: WF.ink2, lineHeight: 1.85 }}>{b}</span>
+              </div>
+            </Box>
+          ))}
+        </div>
+      </Block>
+
+      <Block n="07" title="比較表" intent="最重要" bg={WF.washBlue} pad="76px 80px" max={920}>
+        <SectionHead jp="料金比較" />
+        <div style={{ background: WF.card, borderRadius: 20, padding: '8px 24px 24px', boxShadow: '0 20px 50px rgba(25,97,213,0.12)', border: `1px solid ${WF.line}` }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.5fr 1.1fr 1fr 1fr', alignItems: 'end' }}>
+            <div />
+            <div style={{ padding: '14px 0', textAlign: 'center', borderRadius: '12px 12px 0 0', background: WF.grad, fontFamily: WF.sans, fontWeight: 800, fontSize: 17, color: '#fff', boxShadow: '0 8px 20px rgba(25,97,213,0.25)' }}>Plusra</div>
+            <div style={{ padding: '14px 0', textAlign: 'center', fontFamily: WF.sans, fontWeight: 700, color: WF.ink3 }}>A社</div>
+            <div style={{ padding: '14px 0', textAlign: 'center', fontFamily: WF.sans, fontWeight: 700, color: WF.ink3 }}>B社</div>
+          </div>
+          {CMP_ROWS.map((r,i)=>{
+            const last = i===CMP_ROWS.length-1;
+            const cell = (d, accent) => (
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 2, textAlign: 'center' }}>
+                {d.ok && <Check c={accent?WF.accent:WF.ink4} size={14} />}
+                {d.big && <span style={{ fontFamily: WF.sans, fontWeight: accent?700:500, fontSize: accent?14:12, color: accent?WF.accent:(d.dim?WF.ink4:WF.ink2) }}>{d.big}</span>}
+                {d.sub && <span style={{ fontFamily: WF.sans, fontSize: 10, color: accent?WF.accent:WF.ink3 }}>{d.sub}</span>}
+              </div>
+            );
+            return (
+              <div key={i} style={{ display: 'grid', gridTemplateColumns: '1.5fr 1.1fr 1fr 1fr', alignItems: 'center' }}>
+                <div style={{ padding: '14px 8px 14px 2px', fontFamily: WF.sans, fontSize: 12.5, fontWeight: 600, color: WF.ink, borderBottom: `1px solid ${WF.line}` }}>{r.k}</div>
+                <div style={{ padding: '14px 6px', background: WF.accentSoft, borderLeft: `1px solid ${WF.accentLine}`, borderRight: `1px solid ${WF.accentLine}`, borderBottom: last?`1px solid ${WF.accentLine}`:`1px solid ${WF.accentSoft2}`, borderRadius: last?'0 0 12px 12px':0 }}>{cell(r.p, true)}</div>
+                <div style={{ padding: '14px 6px', borderBottom: `1px solid ${WF.line}` }}>{cell(r.a)}</div>
+                <div style={{ padding: '14px 6px', borderBottom: `1px solid ${WF.line}` }}>{cell(r.b)}</div>
+              </div>
+            );
+          })}
+        </div>
+      </Block>
+
+      <Block n="08" title="お客様の声" intent="カード型" bg={WF.card}>
+        <SectionHead jp="お客様の声" />
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 18 }}>
+          {[
+            ['設定がとにかく簡単で、乗り換えた初日から動きました。','美容サロン経営','Aさん'],
+            ['毎月の固定費がゼロになったのが何より大きい。','EC運営','Bさん'],
+            ['キャンバスで全体が見えるので、複雑な分岐も迷わず組めました。','オンライン講座','Cさん'],
+          ].map(([q,name,role],i)=>(
+            <Box key={i} pad={22} style={{ borderRadius: 18, display: 'flex', flexDirection: 'column', gap: 14 }}>
+              <div style={{ display: 'flex', gap: 3, color: WF.accent }}>{'★★★★★'.split('').map((s,j)=><span key={j} style={{ fontSize: 13 }}>{s}</span>)}</div>
+              <p style={{ margin: 0, fontFamily: WF.sans, fontSize: 13.5, color: WF.ink, lineHeight: 1.85 }}>「{q}」</p>
+              <div style={{ display: 'flex', alignItems: 'center', gap: 10, marginTop: 'auto', paddingTop: 4 }}>
+                <Avatar size={38} />
+                <div style={{ display: 'flex', flexDirection: 'column' }}>
+                  <span style={{ fontFamily: WF.sans, fontSize: 13, fontWeight: 700, color: WF.ink }}>{role}</span>
+                  <span style={{ fontFamily: WF.sans, fontSize: 11.5, color: WF.ink3 }}>{name}</span>
+                </div>
+              </div>
+            </Box>
+          ))}
+        </div>
+      </Block>
+
+      <Block n="09" title="始め方" intent="シンプルな3ステップ" bg={WF.washTop} max={780}>
+        <SectionHead jp="乗り換えは、びっくりするほどシンプルです。" size={28} />
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+          {[
+            ['Step 1','アカウント作成（1分）','メールで登録して、Instagramにログイン。'],
+            ['Step 2','自動返信を作る（5〜30分）','今動いているフローの内容だけ持ってくればOK。'],
+          ].map(([s,t,b],i)=>(
+            <Box key={i} pad={26} style={{ display: 'flex', flexDirection: 'column', gap: 10, borderRadius: 18 }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                <Pill accent>{s}</Pill>
+                <CircleArrow size={36} />
+              </div>
+              <span style={{ fontFamily: WF.sans, fontWeight: 700, fontSize: 17, color: WF.ink }}>{t}</span>
+              <span style={{ fontFamily: WF.sans, fontSize: 13.5, color: WF.ink2, lineHeight: 1.75 }}>{b}</span>
+            </Box>
+          ))}
+        </div>
+      </Block>
+
+      <div style={{ background: WF.gradDeep, padding: '80px 80px', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ maxWidth: 1000, margin: '0 auto', position: 'relative' }}>
+          <div style={{ textAlign: 'center', marginBottom: 38 }}>
+            <span style={{ display: 'inline-block', fontFamily: WF.sans, fontSize: 13, fontWeight: 600, letterSpacing: 2, color: 'rgba(255,255,255,0.7)', marginBottom: 10 }}>料金</span>
+            <h2 style={{ margin: 0, fontFamily: WF.sans, fontWeight: 800, fontSize: 34, letterSpacing: -0.8, color: '#fff' }}>0円で、すべての機能を。</h2>
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <div style={{ width: 400, borderRadius: 24, background: '#fff', padding: '36px 34px', textAlign: 'center', boxShadow: '0 30px 70px rgba(0,0,0,0.3)' }}>
+              <span style={{ fontFamily: WF.sans, fontSize: 13, color: WF.ink3 }}>月額</span>
+              <div style={{ fontFamily: WF.sans, fontWeight: 800, fontSize: 104, lineHeight: 0.9, letterSpacing: -4, background: WF.grad, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text', margin: '4px 0 8px' }}>¥0</div>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 11, margin: '20px 0', textAlign: 'left' }}>
+                {['全機能が使い放題','配信数の制限なし','クレジットカード不要','契約期間の縛りなし'].map(t=>(
+                  <div key={t} style={{ display: 'flex', alignItems: 'center', gap: 10 }}><Check size={16} /><span style={{ fontFamily: WF.sans, fontSize: 14.5, color: WF.ink }}>{t}</span></div>
+                ))}
+              </div>
+              <Btn solid w="100%" sub="クレジットカード不要">無料で始める →</Btn>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <Block n="11" title="FAQ" intent="折りたたみ形式" bg={WF.card} max={760}>
+        <SectionHead jp="よくある質問" />
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+          {[
+            ['今の自動返信を全部作り直すのは面倒では？', true],
+            ['一斉配信や抽選など、高度な機能はありますか？', false],
+            ['聞いたことのないサービスで不安なのですが…', false],
+            ['困ったときのサポートはありますか？', false],
+          ].map(([q,open],i)=>(
+            <div key={i} style={{ border: `1px solid ${open ? WF.accentLine : WF.line}`, borderRadius: 14, background: open ? WF.accentSoft : WF.card, overflow: 'hidden', boxShadow: '0 1px 3px rgba(15,23,42,0.04)' }}>
+              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '18px 22px' }}>
+                <span style={{ fontFamily: WF.sans, fontWeight: 600, fontSize: 15, color: WF.ink }}>Q. {q}</span>
+                <span style={{ fontFamily: WF.mono, color: WF.accent, fontSize: 18 }}>{open ? '−' : '+'}</span>
+              </div>
+              {open && <div style={{ padding: '0 22px 20px' }}><Lines n={2} w={['100%','64%']} h={8} /></div>}
+            </div>
+          ))}
+        </div>
+      </Block>
+
+      <Block n="12" title="追伸" intent="信頼構築" bg={WF.washTop} pad="76px 80px 84px" max={720}>
+        <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
+          <span style={{ fontFamily: WF.sans, fontSize: 30, fontWeight: 800, color: WF.ink, letterSpacing: -0.5 }}>P.S.</span>
+        </div>
+        <div style={{ display: 'flex', gap: 20, marginTop: 24, background: WF.card, borderRadius: 20, padding: 28, border: `1px solid ${WF.line}`, boxShadow: '0 10px 30px rgba(15,23,42,0.06)' }}>
+          <Avatar size={60} />
+          <div style={{ flex: 1 }}>
+            <Lines n={5} w={['100%','94%','98%','88%','56%']} h={9} />
+            <p style={{ margin: '18px 0 0', fontFamily: WF.sans, fontSize: 16, fontWeight: 700, color: WF.ink, lineHeight: 1.7 }}>迷わず使えて、ちゃんと売上に変わる。安心して使い続けられるツールを。</p>
+          </div>
+        </div>
+        <div style={{ marginTop: 30, textAlign: 'center' }}><Btn solid sub="クレジットカード不要">無料で始める →</Btn></div>
+      </Block>
+
+      <div style={{ padding: '34px 80px', background: WF.ink, display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+        <Logo height={26} color="#fff" />
+        <span style={{ fontFamily: WF.mono, fontSize: 11, color: 'rgba(255,255,255,0.5)' }}>運営：どんバズくん チーム · Meta公式API認定</span>
+      </div>
+    </>
+  );
+}
+
+Object.assign(window, { FullLP });
+})();
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// App
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+const { WF } = window;
+const { FullLP } = window;
+
+function App() {
+  return (
+    <div style={{ background: WF.card, padding: '0', margin: '0' }}>
+      <FullLP />
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
 </script>
 </body>
 </html>
