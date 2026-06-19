@@ -94,6 +94,7 @@
 
 
 
+
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // wf-kit.jsx — Plusra LP wireframe kit, themed to the Plusra Design System
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -485,7 +486,7 @@
 
   function SectionHead({ en, num, jp, size = 30, spec, sub }) {
     return (
-      <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, marginBottom: 40, justifyContent: "flex-start", height: "60px", margin: "0px 0px 50px" }}>
+      <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, margin: '0 0 50px', justifyContent: 'flex-start' }}>
       {en && <EnLabel num={num} style={{ justifyContent: 'center' }}>{en}</EnLabel>}
       <h2 className="underline-grow" style={{ margin: 0, fontFamily: WF.head, fontWeight: 800, fontSize: size + 4, lineHeight: 1.25, letterSpacing: -0.6, color: WF.ink }}>{jp}</h2>
       {sub && <p style={{ fontFamily: WF.sans, fontSize: 14, color: WF.ink3, margin: "32px 0px 0px" }}>{sub}</p>}
