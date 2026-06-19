@@ -26,6 +26,10 @@
   .nav-link:hover { color: #1961D5 !important; }
   .footer-link { cursor: pointer; text-decoration: none; }
   .footer-link:hover { text-decoration: underline; }
+  .ghost-link { transition: opacity 160ms ease; }
+  .ghost-link:hover { opacity: 0.55; }
+  .logo-link { transition: opacity 160ms ease; }
+  .logo-link:hover { opacity: 0.7; }
   html { scroll-behavior: smooth; }
   [id^="sec-"] { scroll-margin-top: 88px; }
   .cta-shine { position: relative; overflow: hidden; cursor: pointer; transition: transform 180ms ease, box-shadow 180ms ease; }
@@ -84,6 +88,7 @@
 <div id="scroll-progress"></div>
 <div id="root"></div>
 <script type="text/babel">
+
 
 
 
@@ -472,7 +477,7 @@
 
   function Block({ n, title, intent, children, bg, en, pad = '112px 80px', max = 1000, dark, anchorId }) {
     return (
-      <div id={anchorId} data-dark={dark ? 'true' : undefined} style={{ ...{ background: bg || WF.card, padding: pad, position: 'relative' }, padding: "100px 80px 112px" }}>
+      <div id={anchorId} data-dark={dark ? 'true' : undefined} style={{ ...{ background: bg || WF.card, padding: pad, position: 'relative' }, padding: "80px 80px 112px" }}>
       <div style={{ maxWidth: max, margin: '0 auto', position: 'relative' }}>{children}</div>
     </div>);
 
@@ -480,7 +485,7 @@
 
   function SectionHead({ en, num, jp, size = 30, spec, sub }) {
     return (
-      <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, marginBottom: 40, justifyContent: "flex-start", height: "120px", margin: "0px 0px 70px" }}>
+      <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, marginBottom: 40, justifyContent: "flex-start", height: "60px", margin: "0px 0px 50px" }}>
       {en && <EnLabel num={num} style={{ justifyContent: 'center' }}>{en}</EnLabel>}
       <h2 className="underline-grow" style={{ margin: 0, fontFamily: WF.head, fontWeight: 800, fontSize: size + 4, lineHeight: 1.25, letterSpacing: -0.6, color: WF.ink }}>{jp}</h2>
       {sub && <p style={{ fontFamily: WF.sans, fontSize: 14, color: WF.ink3, margin: "32px 0px 0px" }}>{sub}</p>}
@@ -526,7 +531,7 @@
     const textColor = scrolled ? WF.ink2 : '#fff';
     return (
       <div style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 48px', height: 72, background: scrolled ? 'rgba(255,255,255,0.5)' : 'transparent', backdropFilter: scrolled ? 'blur(22px) saturate(1.6)' : 'none', WebkitBackdropFilter: scrolled ? 'blur(22px) saturate(1.6)' : 'none', borderBottom: '1px solid ' + (scrolled ? 'rgba(15,23,42,0.08)' : 'rgba(255,255,255,0.25)'), boxShadow: scrolled ? '0 4px 20px rgba(15,23,42,0.08)' : 'none', transition: 'background 220ms ease, border-color 220ms ease, box-shadow 220ms ease' }}>
-      {scrolled ? <Logo height={32} gradientSymbol textColor={WF.ink} /> : <Logo height={32} symbolColor="#fff" textColor="#fff" />}
+      <a href="#" className="logo-link" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>{scrolled ? <Logo height={32} gradientSymbol textColor={WF.ink} /> : <Logo height={32} symbolColor="#fff" textColor="#fff" />}</a>
       <div style={{ display: 'flex', alignItems: 'center', gap: 30 }}>
         {[['機能', 'sec-features'], ['比較', 'sec-compare'], ['料金', 'sec-pricing'], ['よくある質問', 'sec-faq']].map(([t, id]) => <a key={t} href={'#' + id} className="nav-link" style={{ fontFamily: WF.sans, fontSize: 14, fontWeight: 500, color: textColor, textDecoration: 'none' }}>{t}</a>)}
         <div className="cta-shine" style={{ height: 40, padding: '0 20px', borderRadius: 999, background: scrolled ? WF.grad : 'transparent', color: '#fff', fontFamily: WF.sans, fontWeight: 700, fontSize: 13, display: 'flex', alignItems: 'center', border: scrolled ? 'none' : '1px solid #fff', boxShadow: scrolled ? '0 6px 18px rgba(25,97,213,0.28)' : 'none' }}>無料で始める</div>
@@ -586,12 +591,12 @@
                   <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8h9M8 4l4 4-4 4" /></svg>
                 </span>
               </div>
-              <div style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 10, width: 260 }}>
+              <a href="#sec-features" className="ghost-link" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 10, width: 260, textDecoration: 'none' }}>
                 <span style={{ fontFamily: WF.sans, fontSize: 15, fontWeight: 700, color: '#fff', textDecoration: 'underline', textUnderlineOffset: 5 }}>機能を見る</span>
                 <div style={{ width: 26, height: 26, borderRadius: '50%', border: '1.5px solid rgba(255,255,255,0.6)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8h9M8 4l4 4-4 4" /></svg>
                 </div>
-              </div>
+              </a>
             </div>
             <span style={{ fontFamily: WF.sans, fontSize: 12, color: 'rgba(255,255,255,0.6)' }}>登録は1分・クレジットカード不要</span>
           </div>
