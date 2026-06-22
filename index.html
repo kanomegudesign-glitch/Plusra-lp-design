@@ -64,7 +64,9 @@
     .nav-burger { display: flex !important; }
     .site-header { padding-left: 18px !important; padding-right: 18px !important; }
     .sec-band h2, .sec-band h3 { font-size: clamp(22px, 5.6vw, 30px) !important; }
-    #sec-features h2 { font-size: clamp(20px, 5.2vw, 26px) !important; }
+    #sec-features h2 { font-size: clamp(22px, 5.6vw, 30px) !important; }
+    .bubble-text { font-size: 13.5px !important; line-height: 1.6 !important; }
+    .logo-link { transform: scale(0.84); transform-origin: left center; }
     .ideal-h2 { font-size: 18px !important; }
     .ideal-h2 span { font-size: 21px !important; }
     .ideal-logo { transform: scale(0.7); margin: 12px 0 !important; }
@@ -101,6 +103,8 @@
     .site-footer > div { justify-content: center !important; flex-wrap: nowrap !important; white-space: nowrap !important; gap: 14px !important; }
     .site-footer > div .footer-link { font-size: 12px !important; }
     .site-header { height: 52px !important; }
+    #scroll-progress { top: 52px !important; }
+    .nav-drawer { top: 52px !important; }
     .final-cta { padding-left: 28px !important; padding-right: 28px !important; }
     #sec-pricing h2 { font-size: 24px !important; }
     #sec-pricing .zero-pulse { font-size: 116px !important; }
@@ -753,7 +757,7 @@
                 <img src={img} alt="" style={{ width: '100%', height: 'auto', display: 'block' }} />
               </div>
               <div style={{ position: 'relative', background: WF.card, borderRadius: 18, padding: '22px 28px', boxShadow: '0 8px 24px rgba(15,23,42,0.08)', maxWidth: 520 }}>
-                <span style={{ fontFamily: WF.sans, fontSize: 17, fontWeight: 700, color: WF.ink, lineHeight: 1.7 }}>{text}</span>
+                <span className="bubble-text" style={{ fontFamily: WF.sans, fontSize: 17, fontWeight: 700, color: WF.ink, lineHeight: 1.7 }}>{text}</span>
                 <div style={{ position: 'absolute', bottom: 16, [right ? 'right' : 'left']: -8, width: 0, height: 0, borderTop: '8px solid transparent', borderBottom: '8px solid transparent', [right ? 'borderLeft' : 'borderRight']: `10px solid ${WF.card}` }} />
               </div>
             </div>
