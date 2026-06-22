@@ -143,6 +143,7 @@
   }
   html { scroll-behavior: smooth; }
   .sp-br { display: none; }
+  @media (min-width: 901px) { .final-cta .cta-h2 { font-size: 52px !important; } }
   @media (max-width: 900px) { .sp-br { display: inline !important; } }
   /* ===== タブレット専用 ===== */
   @media (min-width: 681px) and (max-width: 900px) {
@@ -1051,7 +1052,7 @@
             <span className="zero-pulse" style={{ fontFamily: WF.head, fontWeight: 800, fontSize: 190, lineHeight: 1, color: '#fff', textShadow: '0 0 60px rgba(127,194,255,0.7)' }}>¥0</span>
             <span style={{ fontFamily: WF.sans, fontSize: 16, color: 'rgba(255,255,255,0.8)' }}>/ 月</span>
           </div>
-          <div className="pricing-feats" style={{ display: 'flex', flexWrap: 'wrap', gap: '14px 20px', justifyContent: 'center', maxWidth: 480, margin: '8px 0 52px' }}>
+          <div className="pricing-feats" style={{ display: 'grid', gridTemplateColumns: 'auto auto', columnGap: 40, rowGap: 14, justifyContent: 'center', margin: '8px 0 52px' }}>
             {['全機能が使い放題', '配信数の制限なし', 'クレジットカード不要', '契約期間の縛りなし'].map((t) =>
               <span key={t} style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: WF.sans, fontSize: 14.5, color: 'rgba(255,255,255,0.92)', whiteSpace: 'nowrap' }}>
                 <span style={{ width: 22, height: 22, borderRadius: '50%', background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
@@ -1135,7 +1136,7 @@
           </div>
           <div style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', maxWidth: 1180, margin: '0 auto' }}>
             <span className="cta-eyebrow" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: WF.sans, fontSize: 15, fontWeight: 700, letterSpacing: 1, color: '#BFE0FF', marginBottom: 18 }}>＼ 初期費用・月額ずっと¥0 ／</span>
-            <h2 className="cta-h2" style={{ margin: 0, fontFamily: WF.head, fontWeight: 800, lineHeight: 1.25, letterSpacing: -1.4, color: '#fff', fontSize: "50px" }}>迷わず使えて、<br className="cta-br" style={{ display: 'none' }} />ちゃんと売上に変わる。</h2>
+            <h2 className="cta-h2 reveal" style={{ margin: 0, fontFamily: WF.head, fontWeight: 800, lineHeight: 1.25, letterSpacing: -1.4, color: '#fff', fontSize: "52px" }}>迷わず使えて、<br className="cta-br" style={{ display: 'none' }} />ちゃんと売上に変わる。</h2>
             <p className="cta-sub" style={{ margin: '28px 0 0', fontFamily: WF.sans, fontSize: 19, color: 'rgba(255,255,255,0.9)', lineHeight: 1.9 }}>複雑な設定も、毎月の課金も、もういりません。<br />まずは無料で、その使いやすさを試してください。</p>
             <div className="cta-glow cta-btn" style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', height: 76, padding: '0 92px 0 52px', borderRadius: 999, background: '#fff', color: WF.accent, fontFamily: WF.sans, fontSize: 22, fontWeight: 700, marginTop: 40, boxShadow: '0 18px 44px rgba(0,0,0,0.28)' }}>
               <span>無料で始める</span>
