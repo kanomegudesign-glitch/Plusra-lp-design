@@ -72,8 +72,8 @@
     .hero-sp-scroll { display: block !important; padding-bottom: 40px; }
     .hero-copy .cta-glow { height: 52px !important; font-size: 16px !important; padding: 0 56px 0 30px !important; min-width: 0 !important; }
     .hero-copy .cta-glow > span:last-child { width: 28px !important; height: 28px !important; right: 10px !important; }
-    .hero-sp-row { animation: spHeroScroll 24s linear infinite; }
-    @keyframes spHeroScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .hero-sp-row { animation: spHeroScroll 24s linear infinite; will-change: transform; transform: translateZ(0); backface-visibility: hidden; }
+    @keyframes spHeroScroll { from { transform: translate3d(0,0,0); } to { transform: translate3d(-50%,0,0); } }
     .sec-band { padding-left: 28px !important; padding-right: 28px !important; }
     .nav-desktop { display: none !important; }
     .nav-burger { display: flex !important; }
