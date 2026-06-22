@@ -67,6 +67,9 @@
     #sec-features h2 { font-size: clamp(22px, 5.6vw, 30px) !important; }
     .bubble-text { font-size: 13.5px !important; line-height: 1.6 !important; }
     .logo-link { transform: scale(0.84); transform-origin: left center; }
+    .hero-checks { flex-direction: row !important; flex-wrap: wrap !important; justify-content: center !important; gap: 6px 14px !important; margin-top: 18px !important; }
+    .hero-checks > div span { font-size: 12.5px !important; }
+    .ghost-link { display: none !important; }
     .ideal-h2 { font-size: 18px !important; }
     .ideal-h2 span { font-size: 21px !important; }
     .ideal-logo { transform: scale(0.7); margin: 12px 0 !important; }
@@ -697,7 +700,7 @@
             <span className="hero-up" style={{ animationDelay: '0.05s', display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: WF.sans, fontSize: 12.5, fontWeight: 600, color: 'rgba(255,255,255,0.9)', padding: '7px 14px', borderRadius: 999, background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.2)', marginTop: 40, marginBottom: 12 }}>自動返信をもっと使いやすく</span>
             <h1 className="hero-up" style={{ ...{ margin: 0, fontFamily: WF.head, fontWeight: 800, fontSize: 'clamp(30px, 3.2vw, 58px)', lineHeight: 1.25, letterSpacing: -1.4, color: '#fff', whiteSpace: 'nowrap' }, fontFamily: "\"Zen Kaku Gothic New\"", animationDelay: '0.18s' }}>迷わず使えて、<br />ちゃんと売上に変わる。</h1>
             <p className="hero-up" style={{ animationDelay: '0.32s', margin: '22px 0 0', fontFamily: WF.sans, fontSize: 'clamp(14px, 1.35vw, 18px)', color: 'rgba(255,255,255,0.82)', lineHeight: 1.95, maxWidth: 520 }}>毎月高い固定費を払っているのに<br />自動返信を「使いこなせていない」あなたへ<br />複雑な設定も、毎月の課金ももういりません。</p>
-            <div className="hero-up" style={{ animationDelay: '0.44s', display: 'flex', flexDirection: 'column', gap: 11, margin: '26px 0 0' }}>
+            <div className="hero-up hero-checks" style={{ animationDelay: '0.44s', display: 'flex', flexDirection: 'column', gap: 11, margin: '26px 0 0' }}>
               {['初期費用・月額ずっと ¥0', 'Meta公式API利用で安心'].map((t) =>
                 <div key={t} style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                   <div style={{ width: 22, height: 22, borderRadius: '50%', background: '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
