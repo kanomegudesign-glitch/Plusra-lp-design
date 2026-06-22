@@ -3,7 +3,20 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Plusra フルLPワイヤー</title>
+<title>Plusra</title>
+<meta name="description" content="Instagramのためだけに作った自動返信ツール「Plusra」。コメント・DM・ストーリーズ・ライブまで全対応。複雑な設定も毎月の固定費も不要、ずっと0円。iSTEP・エルグラム・ManyChatからの乗り換えにも。" />
+<link rel="icon" href="favicon.ico" sizes="any" />
+<link rel="apple-touch-icon" href="plusra-ogp.png" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Plusra（プラスラ）｜迷わず使えて、ちゃんと売上に変わる。" />
+<meta property="og:description" content="Instagramのためだけに作った自動返信ツール。複雑な設定も毎月の固定費も不要、ずっと0円。" />
+<meta property="og:image" content="plusra-ogp.png" />
+<meta property="og:site_name" content="Plusra" />
+<meta property="og:locale" content="ja_JP" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Plusra（プラスラ）｜迷わず使えて、ちゃんと売上に変わる。" />
+<meta name="twitter:description" content="Instagramのためだけに作った自動返信ツール。複雑な設定も毎月の固定費も不要、ずっと0円。" />
+<meta name="twitter:image" content="plusra-ogp.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=M+PLUS+2:wght@400;500;700;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&family=Klee+One:wght@400;600&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -22,6 +35,8 @@
   .cta-glow::after { content: ''; position: absolute; top: 0; left: -75%; width: 50%; height: 100%; background: linear-gradient(120deg, transparent, rgba(255,255,255,0.85), transparent); transform: skewX(-20deg); opacity: 0; pointer-events: none; }
   .cta-glow:hover::after { animation: ctaShine 0.85s ease; }
   @keyframes ctaShine { 0% { left: -75%; opacity: 0; } 20% { opacity: 1; } 100% { left: 130%; opacity: 0; } }
+  @keyframes heroScrollUp { from { transform: translateY(0); } to { transform: translateY(-50%); } }
+  .hero-col-up { animation: heroScrollUp 26s linear infinite; }
   .nav-link { cursor: pointer; transition: color 160ms ease; }
   .nav-link:hover { color: #1961D5 !important; }
   .footer-link { cursor: pointer; text-decoration: none; }
@@ -30,6 +45,73 @@
   .ghost-link:hover { opacity: 0.55; }
   .logo-link { transition: opacity 160ms ease; }
   .logo-link:hover { opacity: 0.7; }
+  #sec-voice { display: none !important; }
+  /* ===== レスポンシブ ===== */
+  @media (max-width: 1100px) {
+    .hero-band { padding-left: 40px !important; }
+    .hero-pc { right: -18% !important; width: min(900px, 74vw) !important; }
+  }
+  @media (max-width: 900px) {
+    .hero-band { flex-direction: column !important; justify-content: center !important; align-items: center !important; min-height: auto !important; padding: 56px 28px 0 !important; text-align: center; }
+    .ideal-br { display: inline !important; }
+    .hero-copy { max-width: 560px !important; align-items: center !important; }
+    .hero-copy > .hero-up:first-child { align-items: center !important; margin-top: 40px !important; }
+    .hero-copy > .hero-up { align-items: center !important; }
+    .hero-copy h1 { white-space: normal !important; font-size: clamp(28px, 8vw, 40px) !important; }
+    .hero-pc { position: relative !important; right: auto !important; top: auto !important; left: auto !important; transform: none !important; animation: none !important; opacity: 1 !important; width: 132% !important; max-width: none !important; height: 320px !important; overflow: hidden !important; margin: 34px -16% -1px !important; }
+    .sec-band { padding-left: 28px !important; padding-right: 28px !important; }
+    .nav-desktop { display: none !important; }
+    .nav-burger { display: flex !important; }
+    .site-header { padding-left: 18px !important; padding-right: 18px !important; }
+    .sec-band h2, .sec-band h3 { font-size: clamp(22px, 5.6vw, 30px) !important; }
+    #sec-features h2 { font-size: clamp(20px, 5.2vw, 26px) !important; }
+    .ideal-h2 { font-size: 22px !important; }
+    .ideal-h2 span { font-size: 26px !important; }
+    .ideal-logo { transform: scale(0.7); margin: 12px 0 !important; }
+    .benefit-txt h3 { font-size: clamp(17px, 4.8vw, 22px) !important; white-space: nowrap !important; }
+    .cta-h2 { font-size: clamp(24px, 6.4vw, 34px) !important; }
+    .hero-copy p { font-size: clamp(12.5px, 3.4vw, 15px) !important; }
+    .sec-band p { font-size: clamp(13.5px, 3.8vw, 16px) !important; }
+    .voice-grid { font-size: 14.5px !important; }
+    .ideal-band { padding-left: 20px !important; padding-right: 20px !important; }
+    .benefit-txt p { font-size: clamp(13px, 3.6vw, 15px) !important; }
+    .honest-grid { flex-direction: column !important; max-width: 620px !important; gap: 14px !important; }
+    #sec-voice { padding-bottom: 4px !important; }
+    #sec-voice .voice-grid { gap: 14px !important; }
+    .feat-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
+    .benefit-row { grid-template-columns: 1fr !important; gap: 20px !important; }
+    .feat-rows { padding: 0 28px !important; gap: 56px !important; }
+    .benefit-row > .benefit-txt { order: 2 !important; grid-column: 1 !important; padding: 4px 0 0 !important; align-items: center !important; text-align: center !important; }
+    .benefit-row > .benefit-txt > * { align-self: center !important; }
+    .benefit-row > .benefit-img { order: 1 !important; grid-column: 1 !important; padding: 0 !important; width: 100% !important; max-width: 320px !important; margin: 0 auto !important; }
+    .benefit-img .zoomwrap { height: auto !important; border-radius: 12px !important; }
+    .benefit-img .zoomwrap img { height: auto !important; object-fit: contain !important; }
+    .benefit-row { padding-bottom: 52px !important; border-bottom: 1px solid #E2E8F0; }
+    .feat-rows > .benefit-row:last-child { border-bottom: none; padding-bottom: 0 !important; }
+    .benefit-img > * { width: 100% !important; max-width: 100% !important; }
+    .benefit-txt { font-size: 13px !important; }
+    .flow-row { flex-direction: column !important; align-items: stretch !important; gap: 0 !important; }
+    .flow-arrow { transform: rotate(90deg); padding: 8px 0 !important; justify-content: center; }
+    .flow-card { padding: 18px 20px !important; gap: 12px !important; }
+    .flow-card .flow-icon { width: 56px !important; height: 56px !important; }
+    .cmp-pc { display: none !important; }
+    .cmp-mobile { display: block !important; }
+    .site-footer { flex-direction: column !important; gap: 18px !important; text-align: center; padding: 36px 28px !important; }
+    .site-footer > div { justify-content: center !important; flex-wrap: wrap; }
+  }
+  @media (max-width: 680px) {
+    .cmp-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; padding-bottom: 6px; }
+    .cmp-scroll > div { min-width: 580px; }
+    .hero-copy h1 { font-size: clamp(27px, 7.4vw, 36px) !important; }
+    .hero-pc { width: 132% !important; max-width: none !important; margin: 30px -16% -1px !important; height: 290px !important; overflow: hidden !important; border-radius: 0 !important; filter: none !important; }
+    .hero-pc > div { filter: none !important; }
+    .hero-pc img { filter: none !important; }
+    .sec-band h2, .sec-band h3 { font-size: clamp(20px, 5.8vw, 26px) !important; }
+    .benefit-txt h3 { font-size: clamp(18px, 5.4vw, 24px) !important; white-space: nowrap !important; }
+    .benefit-txt h3 br { display: none !important; }
+    .cta-br { display: inline !important; }
+    .cta-h2 { font-size: clamp(20px, 6vw, 28px) !important; }
+  }
   html { scroll-behavior: smooth; }
   [id^="sec-"] { scroll-margin-top: 88px; }
   .cta-shine { position: relative; overflow: hidden; cursor: pointer; transition: transform 180ms ease, box-shadow 180ms ease; }
@@ -68,8 +150,9 @@
   @keyframes heroUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: none; } }
   @keyframes heroPC { from { opacity: 0; transform: translateY(calc(-50% + 40px)) translateX(80px) rotate(2deg); } to { opacity: 1; transform: translateY(calc(-50% + 40px)) translateX(0) rotate(0deg); } }
   @keyframes heroFloat { 0%,100% { transform: translateY(calc(-50% + 40px)); } 50% { transform: translateY(calc(-50% + 28px)); } }
+  @keyframes heroFade { from { opacity: 0; transform: translateY(calc(-50% + 40px)) translateX(40px); } to { opacity: 1; transform: translateY(calc(-50% + 40px)); } }
   .hero-up { opacity: 0; animation: heroUp 0.8s cubic-bezier(0.22,0.61,0.36,1) forwards; }
-  .hero-pc { opacity: 0; animation: heroPC 1s cubic-bezier(0.22,0.61,0.36,1) 0.25s forwards, heroFloat 6s ease-in-out 1.5s infinite; }
+  .hero-pc { opacity: 0; animation: heroFade 1s cubic-bezier(0.22,0.61,0.36,1) 0.25s forwards, heroFloat 6s ease-in-out 1.5s infinite; }
   @media (prefers-reduced-motion: reduce) { .hero-up, .hero-pc { opacity: 1 !important; animation: none !important; } }
   /* 比較表の行が順に出現 */
   .cmp-row { opacity: 0; transform: translateY(16px); transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.22,0.61,0.36,1); }
@@ -88,6 +171,8 @@
 <div id="scroll-progress"></div>
 <div id="root"></div>
 <script type="text/babel">
+
+
 
 
 
@@ -478,7 +563,7 @@
 
   function Block({ n, title, intent, children, bg, en, pad = '112px 80px', max = 1000, dark, anchorId }) {
     return (
-      <div id={anchorId} data-dark={dark ? 'true' : undefined} style={{ ...{ background: bg || WF.card, padding: pad, position: 'relative' }, padding: "80px 80px 112px" }}>
+      <div id={anchorId} className="sec-band" data-dark={dark ? 'true' : undefined} style={{ ...{ background: bg || WF.card, padding: pad, position: 'relative' }, padding: "80px 80px 112px" }}>
       <div style={{ maxWidth: max, margin: '0 auto', position: 'relative' }}>{children}</div>
     </div>);
 
@@ -530,13 +615,23 @@
     const light = scrolled && !overDark;
     const darkBar = scrolled && overDark;
     const textColor = scrolled ? WF.ink2 : '#fff';
+    const [menuOpen, setMenuOpen] = React.useState(false);
+    const links = [['機能', 'sec-features'], ['比較', 'sec-compare'], ['料金', 'sec-pricing'], ['よくある質問', 'sec-faq']];
     return (
-      <div style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 48px', height: 72, background: scrolled ? 'rgba(255,255,255,0.5)' : 'transparent', backdropFilter: scrolled ? 'blur(22px) saturate(1.6)' : 'none', WebkitBackdropFilter: scrolled ? 'blur(22px) saturate(1.6)' : 'none', borderBottom: '1px solid ' + (scrolled ? 'rgba(15,23,42,0.08)' : 'rgba(255,255,255,0.25)'), boxShadow: scrolled ? '0 4px 20px rgba(15,23,42,0.08)' : 'none', transition: 'background 220ms ease, border-color 220ms ease, box-shadow 220ms ease' }}>
+      <div className="site-header" style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100, display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '0 48px', height: 72, background: scrolled || menuOpen ? 'rgba(255,255,255,0.5)' : 'transparent', backdropFilter: scrolled || menuOpen ? 'blur(22px) saturate(1.6)' : 'none', WebkitBackdropFilter: scrolled || menuOpen ? 'blur(22px) saturate(1.6)' : 'none', borderBottom: '1px solid ' + (scrolled ? 'rgba(15,23,42,0.08)' : 'rgba(255,255,255,0.25)'), boxShadow: scrolled ? '0 4px 20px rgba(15,23,42,0.08)' : 'none', transition: 'background 220ms ease, border-color 220ms ease, box-shadow 220ms ease' }}>
       <a href="#" className="logo-link" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>{scrolled ? <Logo height={32} gradientSymbol textColor={WF.ink} /> : <Logo height={32} symbolColor="#fff" textColor="#fff" />}</a>
-      <div style={{ display: 'flex', alignItems: 'center', gap: 30 }}>
-        {[['機能', 'sec-features'], ['比較', 'sec-compare'], ['料金', 'sec-pricing'], ['よくある質問', 'sec-faq']].map(([t, id]) => <a key={t} href={'#' + id} className="nav-link" style={{ fontFamily: WF.sans, fontSize: 14, fontWeight: 500, color: textColor, textDecoration: 'none' }}>{t}</a>)}
+      <div className="nav-desktop" style={{ display: 'flex', alignItems: 'center', gap: 30 }}>
+        {links.map(([t, id]) => <a key={t} href={'#' + id} className="nav-link" style={{ fontFamily: WF.sans, fontSize: 14, fontWeight: 500, color: textColor, textDecoration: 'none' }}>{t}</a>)}
         <div className="cta-shine" style={{ height: 40, padding: '0 20px', borderRadius: 999, background: scrolled ? WF.grad : 'transparent', color: '#fff', fontFamily: WF.sans, fontWeight: 700, fontSize: 13, display: 'flex', alignItems: 'center', border: scrolled ? 'none' : '1px solid #fff', boxShadow: scrolled ? '0 6px 18px rgba(25,97,213,0.28)' : 'none' }}>無料で始める</div>
       </div>
+      <button className="nav-burger" onClick={() => setMenuOpen((o) => !o)} aria-label="メニュー" style={{ display: 'none', flexDirection: 'column', justifyContent: 'center', gap: 5, width: 44, height: 44, background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}>
+        {[0, 1, 2].map((k) => <span key={k} style={{ display: 'block', width: 24, height: 2, borderRadius: 2, background: scrolled ? WF.ink : '#fff', transition: 'transform 0.3s ease, opacity 0.2s ease', transform: menuOpen ? (k === 0 ? 'translateY(7px) rotate(45deg)' : k === 2 ? 'translateY(-7px) rotate(-45deg)' : 'none') : 'none', opacity: menuOpen && k === 1 ? 0 : 1 }} />)}
+      </button>
+      {menuOpen &&
+        <div className="nav-drawer" style={{ position: 'absolute', top: 72, left: 0, right: 0, background: 'rgba(255,255,255,0.97)', backdropFilter: 'blur(18px)', WebkitBackdropFilter: 'blur(18px)', borderBottom: `1px solid ${WF.line}`, boxShadow: '0 12px 30px rgba(15,23,42,0.12)', display: 'flex', flexDirection: 'column', padding: '12px 28px 24px' }}>
+          {links.map(([t, id]) => <a key={t} href={'#' + id} onClick={() => setMenuOpen(false)} style={{ fontFamily: WF.sans, fontSize: 16, fontWeight: 600, color: WF.ink2, textDecoration: 'none', padding: '15px 4px', borderBottom: `1px solid ${WF.line}` }}>{t}</a>)}
+          <div style={{ marginTop: 18, height: 50, borderRadius: 999, background: WF.grad, color: '#fff', fontFamily: WF.sans, fontWeight: 700, fontSize: 15, display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 6px 18px rgba(25,97,213,0.28)' }}>無料で始める</div>
+        </div>}
     </div>);
 
   }
@@ -558,12 +653,28 @@
 
   }
 
+  function HeroSlides() {
+    const shots = ['mv-1.png', 'mv-2.png', 'mv-3.png', 'hero-slide-canvas.png'];
+    const [n, setN] = React.useState(0);
+    React.useEffect(() => {
+      const id = setInterval(() => setN((p) => (p + 1) % shots.length), 3200);
+      return () => clearInterval(id);
+    }, []);
+    return (
+      <div style={{ position: 'absolute', inset: 0, background: '#fff', overflow: 'hidden' }}>
+        {shots.map((s, i) =>
+        <img key={i} src={s} alt="" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', objectPosition: 'center top', background: '#fff', opacity: i === n ? 1 : 0, transition: 'opacity 0.9s ease' }} />
+        )}
+      </div>);
+
+  }
+
   function FullLP() {
     return (
       <>
       <Header />
       <div data-dark="true" style={{ width: '100%', minHeight: '100vh', display: 'flex', flexDirection: 'column', overflow: 'hidden', background: 'radial-gradient(120% 110% at 82% 0%, #4A92F2 0%, #2360DC 44%, #163CA0 80%, #0F2C82 100%)', fontFamily: WF.sans }}>
-        <div style={{ position: 'relative', flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'flex-start', overflow: 'hidden', minHeight: 780, height: "1047px", padding: "180px 0px 56px 100px" }}>
+        <div className="hero-band" style={{ position: 'relative', flex: 1, display: 'flex', alignItems: 'center', justifyContent: 'flex-start', overflow: 'hidden', height: '100vh', minHeight: 620, padding: '96px 0 56px 100px' }}>
           <div style={{ position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none' }}>
             <div className="orb-a" style={{ position: 'absolute', top: '-20%', left: '8%', width: 620, height: 520, borderRadius: '50%', background: 'radial-gradient(circle, rgba(86,184,232,0.55), transparent 62%)', filter: 'blur(70px)' }} />
             <div className="orb-b" style={{ position: 'absolute', bottom: '-28%', right: '-6%', width: 680, height: 580, borderRadius: '50%', background: 'radial-gradient(circle, rgba(64,110,230,0.6), transparent 62%)', filter: 'blur(72px)' }} />
@@ -571,9 +682,9 @@
             <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px)', backgroundSize: '14px 14px' }} />
             <div style={{ position: 'absolute', inset: 0, opacity: 0.12, mixBlendMode: 'overlay', backgroundImage: "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")" }} />
           </div>
-          <div style={{ position: 'relative', zIndex: 2, maxWidth: 580, flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
-            <span className="hero-up" style={{ animationDelay: '0.05s', display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: WF.sans, fontSize: 12.5, fontWeight: 600, color: 'rgba(255,255,255,0.9)', padding: '7px 14px', borderRadius: 999, background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.2)', marginBottom: 24 }}>自動返信をもっと使いやすく</span>
-            <h1 className="hero-up" style={{ ...{ margin: 0, fontFamily: WF.head, fontWeight: 800, fontSize: 'clamp(34px, 4.6vw, 62px)', lineHeight: 1.25, letterSpacing: -1.4, color: '#fff', whiteSpace: 'nowrap' }, fontFamily: "\"Zen Kaku Gothic New\"", animationDelay: '0.18s' }}>迷わず使えて、<br />ちゃんと売上に変わる。</h1>
+          <div className="hero-copy" style={{ position: 'relative', zIndex: 2, maxWidth: 580, flexShrink: 0, display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+            <span className="hero-up" style={{ animationDelay: '0.05s', display: 'inline-flex', alignItems: 'center', gap: 8, fontFamily: WF.sans, fontSize: 12.5, fontWeight: 600, color: 'rgba(255,255,255,0.9)', padding: '7px 14px', borderRadius: 999, background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.2)', marginTop: 40, marginBottom: 12 }}>自動返信をもっと使いやすく</span>
+            <h1 className="hero-up" style={{ ...{ margin: 0, fontFamily: WF.head, fontWeight: 800, fontSize: 'clamp(30px, 3.2vw, 58px)', lineHeight: 1.25, letterSpacing: -1.4, color: '#fff', whiteSpace: 'nowrap' }, fontFamily: "\"Zen Kaku Gothic New\"", animationDelay: '0.18s' }}>迷わず使えて、<br />ちゃんと売上に変わる。</h1>
             <p className="hero-up" style={{ animationDelay: '0.32s', margin: '22px 0 0', fontFamily: WF.sans, fontSize: 'clamp(14px, 1.35vw, 18px)', color: 'rgba(255,255,255,0.82)', lineHeight: 1.95, maxWidth: 520 }}>毎月高い固定費を払っているのに<br />自動返信を「使いこなせていない」あなたへ<br />複雑な設定も、毎月の課金ももういりません。</p>
             <div className="hero-up" style={{ animationDelay: '0.44s', display: 'flex', flexDirection: 'column', gap: 11, margin: '26px 0 0' }}>
               {['初期費用・月額ずっと ¥0', 'Meta公式API利用で安心'].map((t) =>
@@ -592,8 +703,8 @@
                   <svg width="15" height="15" viewBox="0 0 16 16" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8h9M8 4l4 4-4 4" /></svg>
                 </span>
               </div>
-              <a href="#sec-features" className="ghost-link" style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 10, width: 260, textDecoration: 'none' }}>
-                <span style={{ fontFamily: WF.sans, fontSize: 15, fontWeight: 700, color: '#fff', textDecoration: 'underline', textUnderlineOffset: 5 }}>機能を見る</span>
+              <a href="#sec-features" className="ghost-link" style={{ display: 'inline-flex', gap: 10, width: 260, textDecoration: 'none', opacity: "0.8", fontFamily: "\"Zen Kaku Gothic New\"", alignItems: "flex-start", textAlign: "right", justifyContent: "flex-start", padding: "0px 0px 0px 50px" }}>
+                <span style={{ fontFamily: WF.sans, fontSize: 15, fontWeight: 700, color: '#fff', textDecoration: 'underline', textUnderlineOffset: 5, width: "100px", padding: "0px 2px 0px 0px" }}>機能を見る</span>
                 <div style={{ width: 26, height: 26, borderRadius: '50%', border: '1.5px solid rgba(255,255,255,0.6)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                   <svg width="11" height="11" viewBox="0 0 16 16" fill="none" stroke="#fff" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 8h9M8 4l4 4-4 4" /></svg>
                 </div>
@@ -602,11 +713,11 @@
             <span style={{ fontFamily: WF.sans, fontSize: 12, color: 'rgba(255,255,255,0.6)' }}>登録は1分・クレジットカード不要</span>
           </div>
 
-          <div className="hero-pc" style={{ position: 'absolute', right: 'calc(-14% - 60px)', top: '50%', width: 'min(1520px, calc(100vw - 360px))', zIndex: 1, pointerEvents: 'none' }}>
+          <div className="hero-pc" style={{ position: 'absolute', right: 'calc(-10% - 40px)', top: '50%', transform: 'translateY(-50%)', width: 'min(1440px, calc(100vw - 300px), (100vh - 110px) * 1.85)', zIndex: 1, pointerEvents: 'none' }}>
             <div style={{ position: 'relative', width: '100%' }}>
               <img src="MacBook.png" alt="Plusraプロダクト画面" style={{ width: '100%', display: 'block', filter: 'drop-shadow(0 40px 80px rgba(0,0,0,0.45))' }} />
-              <div style={{ position: 'absolute', left: '11.33%', top: '5.42%', width: '77.27%', height: '82.82%', overflow: 'hidden', background: '#000', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <video src="mv_movie.mp4" autoPlay muted loop playsInline style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'right center', display: 'block' }} />
+              <div style={{ position: 'absolute', left: '11.33%', top: '5.42%', width: '77.27%', height: '82.82%', overflow: 'hidden', background: '#000' }}>
+                <HeroSlides />
               </div>
             </div>
           </div>
@@ -644,11 +755,11 @@
         <div style={{ maxWidth: 720, margin: '96px auto 0', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', position: 'relative' }}>
           <h2 style={{ margin: 0, fontFamily: WF.head, fontWeight: 700, fontSize: 27, lineHeight: 1.7, color: WF.ink }}>使いこなせていないのは、<br />あなたのせいじゃありません。</h2>
           <p style={{ margin: '22px 0 0', maxWidth: 580, fontFamily: WF.sans, fontSize: 15, color: WF.ink3, lineHeight: 2.05 }}>機能がどれだけあっても、使いにくければ売上には変わらない。
-大切なのは「機能の数」じゃなく、<span style={{ color: WF.accent }}> 迷わず使えること。</span></p>
+ 大切なのは「機能の数」じゃなく、<span style={{ color: WF.accent }}> 迷わず使えること。</span></p>
         </div>
       </Block>
 
-      <div data-dark="true" style={{ background: WF.gradDeep, padding: '150px 80px 104px', position: 'relative', overflow: 'hidden', clipPath: 'polygon(0 0, 50% 60px, 100% 0, 100% 100%, 0 100%)', marginTop: '-60px' }}>
+      <div data-dark="true" className="ideal-band" style={{ background: WF.gradDeep, padding: '150px 80px 104px', position: 'relative', overflow: 'hidden', clipPath: 'polygon(0 0, 50% 60px, 100% 0, 100% 100%, 0 100%)', marginTop: '-60px' }}>
         <div style={{ position: 'absolute', inset: 0, pointerEvents: 'none' }}>
           <div style={{ position: 'absolute', top: '-8%', left: '50%', transform: 'translateX(-50%)', width: 960, height: 600, borderRadius: '50%', background: 'radial-gradient(circle, rgba(86,184,232,0.30), transparent 64%)', filter: 'blur(44px)' }} />
           <div style={{ position: 'absolute', bottom: '-30%', left: '-6%', width: 560, height: 560, borderRadius: '50%', background: 'radial-gradient(circle, rgba(126,194,255,0.16), transparent 66%)', filter: 'blur(40px)' }} />
@@ -658,17 +769,17 @@
         <div style={{ position: 'relative', maxWidth: 1080, margin: '0 auto' }}>
           <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <span style={{ fontFamily: WF.sans, fontSize: 14, fontWeight: 700, color: 'rgba(255,255,255,0.82)' }}>その理想、私たちが形にしました。</span>
-            <div style={{ margin: '22px 0' }}><Logo height={88} symbolColor="#fff" textColor="#fff" /></div>
-            <p style={{ margin: 0, fontFamily: WF.sans, fontSize: 18, fontWeight: 500, color: '#fff' }}>Instagramのためだけに、ゼロから作った自動返信ツール。</p>
+            <div className="ideal-logo" style={{ margin: '22px 0' }}><Logo height={88} symbolColor="#fff" textColor="#fff" /></div>
+            <p style={{ margin: 0, fontFamily: WF.sans, fontSize: 18, fontWeight: 500, color: '#fff' }}>Instagramのためだけに、<br className="ideal-br" style={{ display: 'none' }} />ゼロから作った自動返信ツール。</p>
             <div style={{ width: 1, height: 56, margin: '36px 0 30px', background: 'linear-gradient(180deg, rgba(255,255,255,0.5), rgba(255,255,255,0))' }} />
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: 9, marginBottom: 18 }}>
               <div style={{ width: 8, height: 8, borderRadius: '50%', background: WF.accent2 }} />
               <span style={{ fontFamily: WF.sans, fontSize: 14, fontWeight: 700, letterSpacing: 1, color: '#7FC2FF' }}>WHY Plusra?</span>
             </div>
-            <h2 style={{ margin: 0, fontFamily: WF.head, fontWeight: 800, fontSize: 34, lineHeight: 1.5, letterSpacing: -0.8, color: '#fff' }}>迷わず使えて、ちゃんと売上に変わる。<br /><span style={{ fontSize: 42, display: 'inline-block', marginTop: 6, color: '#fff', padding: '0 6px', textDecoration: 'none' }}>しかも、ずっと0円。</span></h2>
+            <h2 className="ideal-h2" style={{ margin: 0, fontFamily: WF.head, fontWeight: 800, fontSize: 34, lineHeight: 1.5, letterSpacing: -0.8, color: '#fff' }}>迷わず使えて、ちゃんと売上に変わる。<br /><span style={{ fontSize: 42, display: 'inline-block', marginTop: 6, color: '#fff', padding: '0 6px', textDecoration: 'none' }}>しかも、ずっと0円。</span></h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 22, marginTop: 56 }}>
+          <div className="feat-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 22, marginTop: 56 }}>
             {[
               [(s) => <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={s} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5" /><rect x="14" y="3" width="7" height="7" rx="1.5" /><rect x="3" y="14" width="7" height="7" rx="1.5" /><path d="M14 17.5h7M17.5 14v7" /></svg>, '複雑な設定はゼロ。', '直感で「迷わず使える」', 'シンプルで分かりやすい機能と、独自のキャンバス形式。パズルをつなぎ合わせるように、複雑な自動返信も直感的に組めます。'],
               [(s) => <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke={s} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M3 16.5l6.5-6.5 4 4L21 7" /><path d="M16 7h5v5" /></svg>, 'チャンスを逃さず', '「ちゃんと売上に変わる」', '投稿コメント、DM、ストーリーズ、ライブ。売上につながる入り口はすべてカバー。あなたの代わりに、24時間売上をつくり続けます。'],
@@ -700,7 +811,7 @@
         <div style={{ maxWidth: 1080, margin: '0 auto', padding: '0 80px' }}>
           <SectionHead jp="選ばれる3つの理由" size={38} />
         </div>
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 150, marginTop: 80 }}>
+        <div className="feat-rows" style={{ display: 'flex', flexDirection: 'column', gap: 150, marginTop: 80 }}>
           {[
             ['Benefit 01', '反応のすべてを、', '見逃さない', 'コメント、DM、ストーリーズのメンションやリアクション、ライブまで。\nお客様のアクションを取りこぼさず、24時間自動で応答します。', ['全トリガー対応', '24時間自動応答'], 'お問い合わせ', 'benefit-01.png'],
             ['Benefit 02', '伝わるメッセージを、', '自由自在に', 'テキストだけでなく、独自ボタン・カルーセル・画像／動画を自由に組み合わせ。\nブランドの世界観をそのまま、お客様に届けられます。', ['リッチメッセージ', 'ノーコード'], 'メッセージ編集', 'benefit-02.png'],
@@ -709,7 +820,7 @@
               const right = i % 2 === 1;
               const browser =
               <div className="lift" style={{ position: 'relative', width: '100%', borderRadius: 16, overflow: 'hidden', background: WF.card, boxShadow: '0 40px 80px rgba(15,23,42,0.18)', border: `1px solid ${WF.line}` }}>
-                <div style={{ height: 44, flexShrink: 0, display: 'flex', alignItems: 'center', gap: 14, padding: '0 18px', borderBottom: `1px solid ${WF.line}`, background: WF.card2, width: "838px" }}>
+                <div style={{ height: 44, flexShrink: 0, display: 'flex', alignItems: 'center', gap: 14, padding: '0 18px', borderBottom: `1px solid ${WF.line}`, background: WF.card2 }}>
                   <div style={{ display: 'flex', gap: 8 }}>{['#E2E8F0', '#E2E8F0', '#E2E8F0'].map((c, j) => <div key={j} style={{ width: 12, height: 12, borderRadius: '50%', background: c }} />)}</div>
                   <div style={{ flex: 1, maxWidth: 420, height: 26, borderRadius: 7, background: WF.card, border: `1px solid ${WF.line}`, display: 'flex', alignItems: 'center', padding: '0 12px' }}>
                     <span style={{ fontFamily: WF.mono, fontSize: 12, color: WF.ink3 }}>https://app.plusra.jp/</span>
@@ -721,9 +832,9 @@
               </div>;
 
               return (
-                <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', alignItems: 'center', gap: 0 }}>
-                <div style={{ ...{ order: right ? 2 : 1, gridColumn: right ? 2 : 1, position: 'relative', width: '100%', justifySelf: 'center', padding: right ? '0 0 0 80px' : '0 80px 0 0' }, padding: "0px 0px 0px 100px" }}>{browser}</div>
-                <div style={{ order: right ? 1 : 2, padding: right ? '0 80px 0 100px' : '0 100px 0 80px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
+                <div key={i} className="benefit-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', alignItems: 'center', gap: 0 }}>
+                <div className="benefit-img" style={{ order: right ? 2 : 1, gridColumn: right ? 2 : 1, position: 'relative', width: '100%', justifySelf: 'center', padding: right ? '0 0 0 80px' : '0 80px 0 0' }}>{browser}</div>
+                <div className="benefit-txt" style={{ order: right ? 1 : 2, padding: right ? '0 80px 0 100px' : '0 100px 0 80px', display: 'flex', flexDirection: 'column', alignItems: 'flex-start' }}>
                   <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, marginBottom: 22 }}>
                     <div style={{ width: 28, height: 28, borderRadius: '50%', background: WF.accent, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20h9" /><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z" /></svg>
@@ -746,7 +857,7 @@
 
       <Block n="07" title="比較表" intent="最重要" bg={WF.washBlue} pad="120px 80px" max={1060} anchorId="sec-compare">
         <SectionHead jp="料金比較" size={42} sub="月額・初期費用・機能を、他社と並べてご覧ください。" />
-        <div style={{ background: WF.card, borderRadius: 24, padding: '10px 36px 36px', boxShadow: '0 28px 64px rgba(25,97,213,0.14)', border: `1px solid ${WF.line}`, position: 'relative' }}>
+        <div className="cmp-scroll cmp-pc" style={{ background: WF.card, borderRadius: 24, padding: '10px 36px 36px', boxShadow: '0 28px 64px rgba(25,97,213,0.14)', border: `1px solid ${WF.line}`, position: 'relative' }}>
           <div style={{ position: 'relative', display: 'grid', gridTemplateColumns: '1.4fr 1.2fr 1fr 1fr' }}>
             {/* Plusra強調列 — 全行を貫く1枚のストリップ */}
             <div style={{ gridColumn: '2', gridRow: '1 / -1', marginTop: -30, background: WF.accentSoft, borderRadius: '14px 14px 14px 14px', zIndex: 0 }} />
@@ -786,6 +897,28 @@
               })}
           </div>
         </div>
+        <div className="cmp-mobile" style={{ display: 'none', background: WF.card, borderRadius: 16, overflow: 'hidden', boxShadow: '0 14px 36px rgba(25,97,213,0.14)', border: `1px solid ${WF.line}` }}>
+          <div style={{ display: 'grid', gridTemplateColumns: '1.1fr 1fr 0.8fr 0.8fr' }}>
+            <div />
+            <div style={{ background: WF.grad, color: '#fff', textAlign: 'center', padding: '10px 2px', fontFamily: WF.head, fontWeight: 800, fontSize: 14, borderRadius: '10px 10px 0 0' }}>Plusra</div>
+            <div style={{ textAlign: 'center', padding: '10px 2px', fontFamily: WF.sans, fontWeight: 700, fontSize: 12, color: WF.ink3, alignSelf: 'end' }}>A社</div>
+            <div style={{ textAlign: 'center', padding: '10px 2px', fontFamily: WF.sans, fontWeight: 700, fontSize: 12, color: WF.ink3, alignSelf: 'end' }}>B社</div>
+            {CMP_ROWS.map((r, i) => {
+              const cellM = (d, ac) =>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', gap: 2, textAlign: 'center' }}>
+                  {d.mark && <span style={{ fontFamily: WF.sans, fontSize: ac ? 17 : 14, fontWeight: 700, color: ac ? WF.accent : WF.ink4, lineHeight: 1 }}>◎</span>}
+                  {d.big && <span style={{ fontFamily: WF.sans, fontSize: ac ? 11.5 : 10.5, fontWeight: ac ? 700 : 500, color: ac ? WF.accent : WF.ink4, lineHeight: 1.4 }}>{d.big}</span>}
+                </div>;
+              return (
+                <React.Fragment key={i}>
+                  <div style={{ padding: '12px 6px', fontFamily: WF.sans, fontSize: 11, fontWeight: 700, color: WF.ink, borderTop: `1px solid ${WF.line}`, display: 'flex', alignItems: 'center' }}>{r.k}{r.k2 || ''}</div>
+                  <div style={{ padding: '12px 4px', background: WF.accentSoft, borderTop: `1px solid ${WF.accentSoft2}`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{cellM(r.p, true)}</div>
+                  <div style={{ padding: '12px 4px', borderTop: `1px solid ${WF.line}`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{cellM(r.a)}</div>
+                  <div style={{ padding: '12px 4px', borderTop: `1px solid ${WF.line}`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{cellM(r.b)}</div>
+                </React.Fragment>);
+            })}
+          </div>
+        </div>
       </Block>
 
       <div style={{ position: 'relative', background: 'linear-gradient(180deg, #FFFFFF 0%, #EEF4FF 50%, #DCE9FE 100%)', overflow: 'hidden' }}>
@@ -795,7 +928,7 @@
           <div style={{ position: 'absolute', bottom: 40, right: '6%', width: 440, height: 440, borderRadius: '50%', background: 'radial-gradient(circle, rgba(25,97,213,0.16), transparent 68%)', filter: 'blur(28px)' }} />
         </div>
 
-      <Block n="08" title="お客様の声" intent="カード型" bg="transparent" max={1080} pad="112px 80px 56px">
+      <Block n="08" title="お客様の声" intent="カード型" bg="transparent" max={1080} pad="112px 80px 24px" anchorId="sec-voice">
         <SectionHead jp="お客様の声" size={38} sub="乗り換えた方々から、うれしい声が届いています。" />
         <div className="voice-grid" style={{ display: 'grid', gridTemplateColumns: '1.25fr 1fr', gap: 22, alignItems: 'stretch' }}>
           {/* フィーチャー */}
@@ -834,9 +967,9 @@
         </div>
       </Block>
 
-      <Block n="09" title="始め方" intent="シンプルな3ステップ" bg="transparent" max={1080} pad="56px 80px 112px">
-        <SectionHead jp="サービスご利用までの流れ" size={38} sub="かんたて3ステップ。複雑な設定も面倒な手続きもなく、すぐに使いはじめられます。" />
-        <div style={{ position: 'relative', display: 'flex', alignItems: 'stretch', justifyContent: 'center', gap: 0 }}>
+      <Block n="09" title="始め方" intent="シンプルな3ステップ" bg="transparent" max={1080} pad="8px 80px 112px">
+        <SectionHead jp="サービスご利用までの流れ" size={38} sub={<>かんたて3ステップ。<br />複雑な設定も面倒な手続きもなく、すぐに使いはじめられます。</>} />
+        <div className="flow-row" style={{ position: 'relative', display: 'flex', alignItems: 'stretch', justifyContent: 'center', gap: 0 }}>
           {[
               ['1', 'アカウント作成', '1分', 'メールアドレスで登録して\nInstagramにログイン。これだけ。',
               (s) => <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke={s} strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="4" /><path d="M4 21v-1a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v1" /></svg>],
@@ -847,16 +980,16 @@
               map(([n, t, dur, b, icon], i) =>
               <React.Fragment key={i}>
               {i > 0 &&
-                <div style={{ display: 'flex', alignItems: 'center', padding: '0 6px', flexShrink: 0 }}>
+                <div className="flow-arrow" style={{ display: 'flex', alignItems: 'center', padding: '0 6px', flexShrink: 0 }}>
                   <svg width="20" height="20" viewBox="0 0 16 16" fill="none" stroke={WF.accent} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 3l5 5-5 5" /></svg>
                 </div>
                 }
-              <div style={{ flex: 1, background: WF.card, borderRadius: 20, border: `1px solid ${WF.line}`, padding: '32px 28px', boxShadow: '0 10px 30px rgba(15,23,42,0.05)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: 18 }}>
+              <div className="flow-card" style={{ flex: 1, background: WF.card, borderRadius: 20, border: `1px solid ${WF.line}`, padding: '32px 28px', boxShadow: '0 10px 30px rgba(15,23,42,0.05)', display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', gap: 18 }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
                   <div style={{ width: 28, height: 28, borderRadius: '50%', background: WF.accent, color: '#fff', fontFamily: WF.sans, fontWeight: 800, fontSize: 15, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{n}</div>
                   <span style={{ fontFamily: WF.head, fontWeight: 800, fontSize: 19, color: WF.ink }}>{t}</span>
                 </div>
-                <div style={{ width: 88, height: 88, borderRadius: '50%', background: WF.accentSoft, display: 'flex', alignItems: 'center', justifyContent: 'center', color: WF.accent }}>{icon(WF.accent)}</div>
+                <div className="flow-icon" style={{ width: 88, height: 88, borderRadius: '50%', background: WF.accentSoft, display: 'flex', alignItems: 'center', justifyContent: 'center', color: WF.accent }}>{icon(WF.accent)}</div>
                 <span style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontFamily: WF.sans, fontSize: 12, fontWeight: 600, color: WF.accent, background: WF.accentSoft, borderRadius: 999, padding: '5px 12px' }}>目安 {dur}</span>
                 <span style={{ fontFamily: WF.sans, fontSize: 13.5, color: WF.ink2, lineHeight: 1.85, whiteSpace: 'pre-line' }}>{b}</span>
               </div>
@@ -866,7 +999,7 @@
       </Block>
       </div>
 
-      <div id="sec-pricing" data-dark="true" style={{ background: 'radial-gradient(120% 100% at 50% 0%, #1A4DC0 0%, #0E2E86 55%, #08205F 100%)', padding: '140px 80px', position: 'relative', overflow: 'hidden' }}>
+      <div id="sec-pricing" data-dark="true" style={{ background: 'radial-gradient(120% 100% at 50% 0%, #1A4DC0 0%, #0E2E86 55%, #08205F 100%)', padding: '140px 80px 72px', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px)', backgroundSize: '26px 26px', pointerEvents: 'none' }} />
         {[760, 580, 400].map((d, i) => <div key={i} style={{ position: 'absolute', top: '44%', left: '50%', transform: 'translate(-50%,-50%)', width: d, height: d, borderRadius: '50%', border: `1px dashed rgba(127,194,255,${0.22 - i * 0.05})`, pointerEvents: 'none' }} />)}
         <div style={{ position: 'absolute', top: '14%', left: '50%', transform: 'translateX(-50%)', width: 560, height: 360, borderRadius: '50%', background: 'radial-gradient(circle, rgba(86,184,232,0.4), transparent 60%)', filter: 'blur(46px)', pointerEvents: 'none' }} />
@@ -896,13 +1029,13 @@
         </div>
       </div>
 
-      <Block n="10b" title="なぜ0円なのか" intent="正直に伝える" bg="#08205F" max={900} pad="40px 80px 120px" dark>
+      <Block n="10b" title="なぜ0円なのか" intent="正直に伝える" bg="#08205F" max={900} pad="8px 80px 110px" dark>
         <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center' }}>
           <span style={{ fontFamily: WF.sans, fontSize: 13, fontWeight: 700, letterSpacing: 3, color: '#7FC2FF', marginBottom: 18 }}>HONEST TALK</span>
           <h2 style={{ margin: 0, fontFamily: WF.head, fontWeight: 800, fontSize: 30, lineHeight: 1.5, letterSpacing: -0.6, color: '#fff' }}>なぜ0円なの？<br />裏があるのでは…</h2>
           <p style={{ margin: '20px 0 0', fontFamily: WF.sans, fontSize: 15, color: 'rgba(255,255,255,0.7)' }}>そう思われるのも当然です。だから、正直にお話しします。</p>
         </div>
-        <div style={{ display: 'flex', gap: 16, marginTop: 48, maxWidth: 880, marginLeft: 'auto', marginRight: 'auto' }}>
+        <div className="honest-grid" style={{ display: 'flex', gap: 16, marginTop: 48, maxWidth: 880, marginLeft: 'auto', marginRight: 'auto' }}>
           {[
             ['自信がある', '触ってもらえれば、伝わる。そう信じています。'],
             ['まず使ってほしい', 'まだ誰も知らない、生まれたばかりのサービスだから。'],
@@ -960,7 +1093,7 @@
             <div style={{ position: 'absolute', bottom: '-24%', right: '-6%', width: 520, height: 520, borderRadius: '50%', background: 'radial-gradient(circle, rgba(86,184,232,0.4), transparent 64%)', filter: 'blur(54px)' }} />
           </div>
           <div style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', alignItems: 'center', textAlign: 'center', maxWidth: 1180, margin: '0 auto' }}>
-            <h2 style={{ margin: 0, fontFamily: WF.head, fontWeight: 800, fontSize: 44, lineHeight: 1.35, letterSpacing: -1, color: '#fff' }}>迷わず使えて、ちゃんと売上に変わる。</h2>
+            <h2 className="cta-h2" style={{ margin: 0, fontFamily: WF.head, fontWeight: 800, fontSize: 48, lineHeight: 1.35, letterSpacing: -1, color: '#fff' }}>迷わず使えて、<br className="cta-br" style={{ display: 'none' }} />ちゃんと売上に変わる。</h2>
             <p style={{ margin: '24px 0 0', fontFamily: WF.sans, fontSize: 15.5, color: 'rgba(255,255,255,0.85)', lineHeight: 1.95 }}>複雑な設定も、毎月の課金も、もういりません。<br />まずは無料で、その使いやすさを試してください。</p>
             <div className="cta-glow" style={{ position: 'relative', display: 'inline-flex', alignItems: 'center', justifyContent: 'center', height: 64, padding: '0 76px 0 44px', borderRadius: 999, background: '#fff', color: WF.accent, fontFamily: WF.sans, fontSize: 18, fontWeight: 700, marginTop: 32, boxShadow: '0 18px 44px rgba(0,0,0,0.28)' }}>
               <span>無料で始める</span>
@@ -973,13 +1106,13 @@
         </div>
       </div>
 
-      <div style={{ padding: '34px 80px', background: '#333333', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 24 }}>
+      <div className="site-footer" style={{ padding: '34px 80px', background: '#333333', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 24 }}>
         <Logo height={26} color="#fff" />
         <div style={{ display: 'flex', gap: 28 }}>
-          {['利用規約', 'プライバシーポリシー', 'お問い合わせ'].map((t) => <span key={t} className="footer-link" style={{ fontFamily: WF.sans, fontSize: 13, fontWeight: 500, color: 'rgba(255,255,255,0.85)' }}>{t}</span>
+          {['利用規約', 'プライバシーポリシー', '特商法', 'お問い合わせ'].map((t) => <span key={t} className="footer-link" style={{ fontFamily: WF.sans, fontSize: 13, fontWeight: 500, color: 'rgba(255,255,255,0.85)' }}>{t}</span>
             )}
         </div>
-        <span style={{ fontFamily: WF.sans, fontSize: 11.5, color: 'rgba(255,255,255,0.5)' }}>© 2026 Plusra</span>
+        <span style={{ fontFamily: WF.sans, fontSize: 11.5, color: 'rgba(255,255,255,0.5)' }}>© 2026 Select Inc.</span>
       </div>
     </>);
 
