@@ -922,10 +922,10 @@
 
       <Block n="07" title="比較表" intent="最重要" bg={WF.washBlue} pad="120px 80px" max={1060} anchorId="sec-compare">
         <SectionHead jp="料金比較" size={42} sub="月額・初期費用・機能を、他社と並べてご覧ください。" />
-        <div className="cmp-scroll cmp-pc" style={{ background: WF.card, borderRadius: 24, padding: '10px 36px 36px', boxShadow: '0 28px 64px rgba(25,97,213,0.14)', border: `1px solid ${WF.line}`, position: 'relative' }}>
+        <div className="cmp-scroll cmp-pc" style={{ background: WF.card, borderRadius: 24, padding: '10px 36px 0', boxShadow: '0 28px 64px rgba(25,97,213,0.14)', border: `1px solid ${WF.line}`, position: 'relative' }}>
           <div style={{ position: 'relative', display: 'grid', gridTemplateColumns: '1.4fr 1.2fr 1fr 1fr' }}>
-            {/* Plusra強調列 — 全行を貫く1枚のストリップ */}
-            <div style={{ gridColumn: '2', gridRow: '1 / -1', marginTop: -30, background: WF.accentSoft, borderRadius: '14px 14px 14px 14px', zIndex: 0 }} />
+            {/* Plusra強調列 — 全行を貫く1枚のカード（薄い青背景） */}
+            <div style={{ gridColumn: '2', gridRow: '1 / ' + (CMP_ROWS.length + 2), marginTop: -30, background: WF.accentSoft, borderRadius: '16px 16px 0 0', zIndex: 0 }} />
 
             {/* ヘッダー行 */}
             <div style={{ gridColumn: '1', gridRow: '1', display: 'flex', alignItems: 'flex-end' }} />
@@ -1123,7 +1123,7 @@
           {[
             ['今のツールで作った自動返信、全部作り直すのが面倒です。', '実際に稼働している自動返信は、多くても5つ程度ではないでしょうか？ PlusraのキャンバスUIなら、1つの動線を数分でサクサク作れます。「全部を一から作り直す」というより、「必要な5つだけを数分で作る」感覚なので、乗り換えの負担は最小限です。'],
             ['一斉配信や抽選など、高度な機能はありますか？', '正直に言うと、現時点ではありません。私たちは「本当に必要な機能を誰もが迷わず使えること」を最優先に開発しています。もし必須の機能があれば、ぜひリクエストしてください。優先的に開発を検討いたします。'],
-            ['このサービス、聞いたことがなくて不安なのですが…', '累計3,500アカウント以上が利用するInstagram分析ツール「どんバズくん」の運営チームが開発しています。InstagramのMeta公式APIを使用した認定サービスですので、アカウント停止のリスク等もなく安心してご利用いただけます。'],
+            ['このサービス、聞いたことがなくて不安なのですが…', '累計3,500アカウント以上が利用するInstagram分析ツール「どんバズくん」の運営チームが開発しています。InstagramのMeta公式APIを使用したサービスですので、アカウント停止のリスク等もなく安心してご利用いただけます。'],
             ['困ったときにサポートはありますか？', '専任チームがサポートします。（サポート体制の詳細は準備中です）']].
             map(([q, a], i) =>
             <FaqItem key={i} q={q} a={a} defaultOpen={i === 0} />
@@ -1175,7 +1175,7 @@
       <div className="site-footer" style={{ padding: '34px 80px', background: '#333333', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 24 }}>
         <Logo height={26} color="#fff" />
         <div style={{ display: 'flex', gap: 28 }}>
-          {['利用規約', 'プライバシーポリシー', '特商法', 'お問い合わせ'].map((t) => <span key={t} className="footer-link" style={{ fontFamily: WF.sans, fontSize: 13, fontWeight: 500, color: 'rgba(255,255,255,0.85)' }}>{t}</span>
+          {['利用規約', 'プライバシーポリシー', '特定商取引法に基づく表記'].map((t) => <span key={t} className="footer-link" style={{ fontFamily: WF.sans, fontSize: 13, fontWeight: 500, color: 'rgba(255,255,255,0.85)' }}>{t}</span>
             )}
         </div>
         <span style={{ fontFamily: WF.sans, fontSize: 11.5, color: 'rgba(255,255,255,0.5)' }}>© 2026 Select Inc.</span>
